@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa55d87f3ea6457cbefa242401889b0, type: 3}
+  m_Name: CocoDebugSettingsData
+  m_EditorClassIdentifier: 
+  m_IsNBOSimulationEnabled: 0
+  _isResourceLogEnabled: 0
+  _virtualODRDownloadTime: 1
+  m_SafeAreaStyle: 1
+  m_CustomSafeAreaRatio:
+    serializedVersion: 2
+    x: 0.05
+    y: 0.05
+    width: 0.9
+    height: 0.9
+  m_IsGlobalEnabled: 0
+  m_IsGodModeEnabled: 0
+  m_IsSkipRVPopupEnabled: 0
+  m_IsFPSHudEnabled:
+    m_Used: 0
+    m_Value: {x: 0, y: 0}
+  m_IsNotificationTestModeEnabled: 0
+  m_IsSkipInterstitialEnabled: 0
+  m_IsDebugStoreMode: 0
+  m_IsFlurryLogEnabled: 0
+  m_IsDebugLogEnabled: 0
+  m_IsEditorLanguageEnabled:
+    m_Used: 0
+    m_Value: 0
+  m_NoMipmapExcludedAssetPaths: []

@@ -1,0 +1,12 @@
+
+{
+	"group": "psdk",
+	"libs": ["libsqlite3.dylib", "libz.dylib"],
+	"frameworks": ["JavaScriptCore.framework:weak","SafariServices.framework","MessageUI.framework","MediaPlayer.framework","Social.framework","AdSupport.framework","StoreKit.framework","CoreTelephony.framework","MobileCoreServices.framework"],
+	"headerpaths": [],
+	"files": [],
+	"folders": [,"VungleSDK.framework/Resources"],
+	"excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+	"buildSettings": {"GCC_ENABLE_CPP_EXCEPTIONS": "YES", "GCC_ENABLE_OBJC_EXCEPTIONS": "YES", "OTHER_LDFLAGS" : ["-ObjC"]}
+}
+		

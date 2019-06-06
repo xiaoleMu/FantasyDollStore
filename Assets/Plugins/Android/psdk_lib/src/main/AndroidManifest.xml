@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tabtale.psdk_lib">
+  <application android:resizeableActivity="false" android:name="android.support.multidex.MultiDexApplication"/>
+  <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
+</manifest>

@@ -1,0 +1,317 @@
+﻿{
+    "userData" : {
+        
+    },
+    "locationMgr" : {
+        "gameTime" : 0,
+        "sources" : {
+            "chartboost" : {
+                "firstDisplayAtSession" : 1
+            },
+            "interstitial" : {
+                "firstDisplayAtSession" : 1
+            },
+            "promotionPage" : {
+                "firstDisplayAtSession" : 1
+            }
+        },
+        "level" : 0,
+        "javascriptUrl" : "http://promo-images.ttpsdk.info/locationMgr/v004/skin.zip",
+        "locations" : {
+            "sceneTransitions" : {
+                "firstDisplayAtSession" : 1,
+                "source" : [
+                    "interstitial"
+                ],
+                "showEveryXDisplays" : 1,
+                "useShowEveryXDisplaysOrTimeBetweenPopups" : false
+            },
+            "sessionStart" : {
+                "firstDisplayAtSession" : 1,
+                "source" : [
+                    "chartboost"
+                ],
+                "showEveryXDisplays" : 1,
+                "useShowEveryXDisplaysOrTimeBetweenPopups" : false
+            },
+            "moreApps" : {
+                "source" : [
+                    "promotionPage"
+                ],
+                "forceShow" : true
+            }
+        },
+        "sessionTime" : 0,
+        "rewardedVideos" : {
+            "resetTimeBetweenPopups" : false,
+            "resetPopupDisplayCounter" : false
+        },
+        "included" : true,
+        "timeIntervalSequence" : [
+            60,
+            45
+        ]
+    },
+    "global" : {
+        "orientation" : "landscape",
+        "brands" : [
+            "CP"
+        ],
+        "googlePlayLicenceKey" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArKNyYXFv6+C2qltcICuPKPhR45WBmhgv86wumadnfBEKHJWNGrk4dP567TD0fVqWeQ8dJm7mp8+s5PBbSJP6ECFQIcDSsB7JSBUwssqP81JxKehe7zGiBDWbqTDHN4uM4om+p6KhL0PE4v3sZYC56TnFhmtpaydZoxIEPEvIQyoB7k2NSRxpwd8IQvAbjZ6nb4OECxdYutObPTP96hx/LQM9t24zNEYv6310PGmTcUU+R9DHoEeuvlAzjdC29ivBvzu5Pe0xRZG082MFFLtv0Sg94iMrozQGqOy4mWdInWECgMKqaCg3m/gaNidL7HB8G1IDLcPe/acC5eEqebzfVwIDAQAB",
+        "gameEngine" : "unity",
+        "audienceModeBuildOnly" : "mixed",
+        "language" : "en",
+        "sdkVersion" : "",
+        "store" : "google",
+        "applyAdmobFiltering" : "MA"
+    },
+    "rateUs" : {
+        "included" : true
+    },
+    "promotionPage" : {
+        "openOnNewActivity" : true,
+        "serverDomain" : "gateway.ttpsdk.info",
+        "modeInfo" : {
+            "modes" : {
+                "controlled" : 0,
+                "test" : 0,
+                "manual" : 100
+            },
+            "expiry" : "2999-12-31T23:59:59Z"
+        },
+        "included" : true
+    },
+    "billing" : {
+        "included" : true,
+        "iaps" : [
+            {
+                "id" : "com.babyeducationtoys.diyfashion.fullversion",
+                "iapId" : "com.cocoplay.diy.fashion_fullversion",
+                "type" : "non-consumable",
+                "noAds" : true
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.allitems",
+                "iapId" : "com.cocoplay.diy.fashion_allitems",
+                "type" : "non-consumable",
+                "noAds" : false
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.noads",
+                "iapId" : "com.cocoplay.diy.fashion_noads",
+                "type" : "non-consumable",
+                "noAds" : true
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.hairsalon",
+                "iapId" : "com.cocoplay.diy.fashion_hairsalon",
+                "type" : "non-consumable",
+                "noAds" : false
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.dressdiy",
+                "iapId" : "com.cocoplay.diy.fashion_dressdiy",
+                "type" : "non-consumable",
+                "noAds" : false
+            }
+        ]
+    },
+    "safeDK" : {
+        "included" : false
+    },
+    "analytics" : {
+        "gameAnalyticsServiceType" : [
+            "flurry",
+            "deltaDna"
+        ],
+        "psdkAnalyticsServiceType" : [
+            "flurry"
+        ],
+        "ttAnalytics" : {
+            "sendAndroidAdvertisersId" : true,
+            "interval" : 60
+        },
+        "deltaDna" : {
+            "activateUsers" : 100,
+            "collectUrl" : "https://collect13995ccdyf.deltadna.net/collect/api",
+            "activateAllUsers" : false,
+            "engageUrl" : "https://engage13995ccdyf.deltadna.net",
+            "ltvOnly" : false,
+            "key" : "76152513307534865762473850615365"
+        },
+        "included" : true,
+        "flurry" : {
+            "enableFlurryCrashReports" : true,
+            "key" : "XRPG7RMSQ4YPCJY7XCQ7"
+        }
+    },
+    "chartboost" : {
+        "chartboostId" : "5aec6d35c36a130a308b14d8",
+        "chartboostSignature" : "65c1a86fe34dbd3107a9aaff48d9a46d5e482b89",
+        "chartboostEnableInterstitial" : true,
+        "included" : true
+    },
+    "configurationFetcher" : {
+        "serverDomain" : "gateway.ttpsdk.info",
+        "included" : true
+    },
+    "experiment" : {
+        
+    },
+    "referrals" : {
+        
+    },
+    "rewardedAds" : {
+        "flurryVideoSpace" : "",
+        "placementid" : "",
+        "fyberClientSecurityToken" : "",
+        "unityAdsZoneId" : "",
+        "admobKey" : "ca-app-pub-6413386943382946/9969556923",
+        "vunglePlacementId" : "",
+        "applovinKey" : "",
+        "adColonyApplicationId" : "",
+        "moPubAdUnitId" : "",
+        "vungleApplicationId" : "",
+        "instanceId" : "",
+        "ecpm" : 0,
+        "fyberAppId" : "",
+        "adKey" : "",
+        "adColonyZoneId" : "",
+        "unityAdsGameId" : "",
+        "included" : true,
+        "rvProviders" : [
+            {
+                "provider" : "admob-rv",
+                "admobKey" : "ca-app-pub-6413386943382946/9969556923",
+                "attributes" : {
+                    "vungle" : [
+                        "RV20_NEWWATERFALL-8576146"
+                    ]
+                }
+            }
+        ]
+    },
+    "share" : {
+        "included" : false
+    },
+    "nativeCampaign" : {
+        "enable" : false,
+        "included" : true
+    },
+    "purchaseValidation" : {
+        "active" : true,
+        "responseInCaseServerFailure" : false,
+        "timeoutInterval" : 5,
+        "account" : "Coco Play"
+    },
+    "appShelf" : {
+        "openOnNewActivity" : true,
+        "locations" : [
+            
+        ],
+        "serverDomain" : "gateway.ttpsdk.info",
+        "included" : true
+    },
+    "gsdkSocialNetworks" : {
+        "included" : true
+    },
+    "interstitial" : {
+        "ecpm" : 0,
+        "interstitialsProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "ca-app-pub-6413386943382946/3276279774",
+                "attributes" : {
+                    "vungle" : [
+                        "INTER17_NEWWATERFALL-1059701"
+                    ],
+                    "aolOne" : [
+                        "2c9d2b4f01636323f0a72b139a1500fa"
+                    ]
+                }
+            }
+        ],
+        "included" : true
+    },
+    "packages" : {
+        "inmobi" : true,
+        "adcolony" : true,
+        "startapp" : true,
+        "unityads" : true,
+        "applovin" : true,
+        "facebook" : true,
+        "mopub" : true,
+        "vungle" : true,
+        "ttanalytics" : true,
+        "deltadna" : true,
+        "millennial" : true,
+        "ironsource" : true,
+        "admob" : true,
+        "flurry" : true
+    },
+    "consent" : {
+        "consentFormURL" : "https://promo-images.ttpsdk.info/privacyForms/consent-form/coco/5.1/skin.zip",
+        "usePSDKGDPRPopups" : true,
+        "privacySettingsURL" : "https://promo-images.ttpsdk.info/privacyForms/privacy-settings/coco/5.1/skin.zip",
+        "consentFormVersion" : "5.1"
+    },
+    "banners" : {
+        "scaleScene" : false,
+        "houseAdsServerDomain" : "gateway.ttpsdk.info",
+        "ecpm" : 0,
+        "showBlockingAdsView" : true,
+        "bannersProviders" : [
+            
+        ],
+        "showBannerAds" : false,
+        "useSmartBanners" : false,
+        "included" : false,
+        "adDisplayTime" : 30,
+        "showAdsAtTop" : false
+    },
+    "remoteAssets" : {
+        "mode" : "none"
+    },
+    "crossDevicePersistency" : {
+        "included" : false
+    },
+    "appsFlyer" : {
+        "disableUnderAgeSAN" : true,
+        "disableUnderAgeEvents" : true,
+        "sendIDFA" : true,
+        "included" : true,
+        "appsFlyerKey" : "8MAzUC3B2BHYVi2uYVHaSd",
+        "gcmProjectNumber" : ""
+    },
+    "socialGame" : {
+        "achievementsIds" : {
+            
+        },
+        "leaderboardsIds" : {
+            
+        },
+        "included" : false
+    },
+    "externalConfiguration" : {
+        "rateMePopupEnabled" : true,
+        "buyMePopupEnabled" : true
+    },
+    "singular" : {
+        "secret" : "",
+        "included" : false,
+        "key" : ""
+    },
+    "splash" : {
+        "images" : [
+            {
+                "imagepath" : "Default.png",
+                "mintime" : 2
+            }
+        ],
+        "included" : false
+    },
+    "crashMonitoringTool" : {
+        "hockeyAppKey" : "38d01fab8fcf481b9b519ea7b569145d",
+        "included" : true
+    }
+}

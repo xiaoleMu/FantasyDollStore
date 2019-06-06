@@ -1,0 +1,12 @@
+
+{
+	"group": "psdk",
+	"libs": [],
+	"frameworks": [],
+	"headerpaths": [],
+	"files": [],
+	"folders": [,],
+	"excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+	"buildSettings": {}
+}
+		

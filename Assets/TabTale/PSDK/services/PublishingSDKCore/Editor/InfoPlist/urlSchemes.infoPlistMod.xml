@@ -1,0 +1,17 @@
+<plist>
+	<dict>
+		<key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleTypeRole</key>
+				<string>None</string>
+				<key>CFBundleURLName</key>
+				<string>com.tabtaleint.publishingsdkcore</string>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>com.tabtaleint.publishingsdkcore</string>
+				</array>
+			</dict>
+		</array>
+	</dict>
+</plist>

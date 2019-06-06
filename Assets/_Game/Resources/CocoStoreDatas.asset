@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2997a247d684f81b0da02a7338576a, type: 3}
+  m_Name: CocoStoreDatas
+  m_EditorClassIdentifier: 
+  isDBReady: 1
+  allProductItems:
+  - foldout: 1
+    productId: 0
+    itemIdString: com.babyeducationtoys.diyfashion.fullversion
+    iosIapString: com.babyeducationtoys.diyfashion.fullversion
+    gpIapString: com.cocoplay.diy.fashion_fullversion
+    amIapString: com.cocoplay.diyfashionamazon_fullversion
+    productType: 1
+    isNoAdsLap: 1
+    relatedItemsFoldout: 1
+    relatedStoreItems: 01000000020000000300000005000000
+    nboAutoUnlock: 0
+  - foldout: 1
+    productId: 1
+    itemIdString: com.babyeducationtoys.diyfashion.allitems
+    iosIapString: com.babyeducationtoys.diyfashion.allitems
+    gpIapString: com.cocoplay.diy.fashion_allitems
+    amIapString: com.cocoplay.diyfashionamazon_allitems
+    productType: 1
+    isNoAdsLap: 0
+    relatedItemsFoldout: 1
+    relatedStoreItems: 
+    nboAutoUnlock: 0
+  - foldout: 1
+    productId: 2
+    itemIdString: com.babyeducationtoys.diyfashion.noads
+    iosIapString: com.babyeducationtoys.diyfashion.noads
+    gpIapString: com.cocoplay.diy.fashion_noads
+    amIapString: com.cocoplay.diyfashionamazon_noads
+    productType: 1
+    isNoAdsLap: 1
+    relatedItemsFoldout: 1
+    relatedStoreItems: 
+    nboAutoUnlock: 0
+  - foldout: 1
+    productId: 3
+    itemIdString: com.babyeducationtoys.diyfashion.hairsalon
+    iosIapString: com.babyeducationtoys.diyfashion.hairsalon
+    gpIapString: com.cocoplay.diy.fashion_hairsalon
+    amIapString: com.cocoplay.diyfashionamazon_hairsalon
+    productType: 1
+    isNoAdsLap: 0
+    relatedItemsFoldout: 1
+    relatedStoreItems: 
+    nboAutoUnlock: 0
+  - foldout: 1
+    productId: 5
+    itemIdString: com.babyeducationtoys.diyfashion.dressdiy
+    iosIapString: com.babyeducationtoys.diyfashion.dressdiy
+    gpIapString: com.cocoplay.diy.fashion_dressdiy
+    amIapString: com.cocoplay.diyfashionamazon_dressdiy
+    productType: 1
+    isNoAdsLap: 0
+    relatedItemsFoldout: 1
+    relatedStoreItems: 
+    nboAutoUnlock: 0
+  - foldout: 1
+    productId: 7
+    itemIdString: Com.cocoplay.diy.fashion_full game
+    iosIapString: 
+    gpIapString: com.cocoplay.diy.fashion_fullgame
+    amIapString: 
+    productType: 1
+    isNoAdsLap: 1
+    relatedItemsFoldout: 1
+    relatedStoreItems: 02000000
+    nboAutoUnlock: 1
+  checkStrategyOnIOS: 0
+  checkStrategyOnGP: 1
+  checkStrategyOnAM: 0

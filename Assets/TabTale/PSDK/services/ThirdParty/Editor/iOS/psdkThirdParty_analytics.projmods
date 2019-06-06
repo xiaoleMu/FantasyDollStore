@@ -1,0 +1,12 @@
+
+{
+	"group": "psdk",
+	"libs": ["libsqlite3.dylib"],
+	"frameworks": ["CoreLocation.framework"],
+	"headerpaths": [],
+	"files": [],
+	"folders": [,],
+	"excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+	"buildSettings": {}
+}
+		

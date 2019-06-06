@@ -1,0 +1,10 @@
+<plist>
+    <dict>
+        <key>NSCameraUsageDescription</key>
+        <string>This will let you take picture and turn it into costume pattern.</string>
+        <key>NSPhotoLibraryAddUsageDescription</key>
+        <string>This will let you save the photo to your library.</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>This will let you visit your library and turn the picture into costume pattern.</string>
+    </dict>
+</plist>

@@ -1,0 +1,1 @@
+PSDKAnalytics:4.18.0.1.2,PSDKBilling:4.18.0.1.2,PSDKCore:4.18.0.1.2,PSDKCrashTool:4.18.0.1.2,PSDKMonetization:4.18.0.1.2,PSDKRateUs:4.18.0.1.2,PSDKRewardedAds:4.18.0.1.2,PSDKSingular:4.18.0.1.2,PSDKSocial:4.18.0.1.2

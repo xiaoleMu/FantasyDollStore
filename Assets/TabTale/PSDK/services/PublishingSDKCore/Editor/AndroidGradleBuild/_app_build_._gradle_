@@ -1,0 +1,261 @@
+buildscript {
+	configurations.all {
+	    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+	    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+	}
+	
+    repositories {
+        maven {
+            url 's3://com.tabtale.repo/android/maven/gradle-plugins'
+            credentials(AwsCredentials) {
+                accessKey getProperty('awsS3AccessKey')
+                secretKey getProperty('awsS3SecretKey')
+            }
+        }
+	maven { url "http://download.safedk.com/maven" }
+	maven {
+		name 'backup'
+		url "s3://com.tabtale.repo/android/maven/backup"
+		credentials(AwsCredentials) {
+		    accessKey getProperty('awsS3AccessKey')
+		    secretKey getProperty('awsS3SecretKey')
+		}
+	}
+    }
+    dependencies {
+        classpath 'com.tabtale:android:1.0'
+        classpath 'com.tabtale.plugins:publishingsdk:1.2.+'
+	classpath 'com.safedk:SafeDKGradlePlugin:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.tabtale.android'
+apply plugin: 'com.tabtale.plugins.publishingsdk'
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+
+android {
+    compileSdkVersion targetSdk.toInteger()
+    buildToolsVersion buildToolsVer
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    // making the output apk name on "release.apk"
+    archivesBaseName = "app"
+
+    defaultConfig {
+        minSdkVersion minSdk
+        multiDexEnabled true
+        applicationId = bundleIdentifier
+        targetSdkVersion targetSdk.toInteger()
+	
+        ndk {
+            abiFilters "armeabi-v7a","x86"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    File signFile = rootProject.file('keystore.properties')
+    if (signFile.exists()) {
+        Properties properties = new Properties()
+        properties.load(new FileInputStream(signFile))
+        signingConfigs {
+            release {
+                storeFile rootProject.file(properties['keystore'])
+                storePassword properties['storePassword']
+                keyAlias properties['keyAlias']
+                keyPassword properties['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            zipAlignEnabled true
+            if (signFile.exists()) {
+                signingConfig signingConfigs.release
+            }
+        }
+        debug {
+            zipAlignEnabled true
+            if (signFile.exists()) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+            variant.outputs.each { output ->
+                output.outputFile = file("../../${rootProject.productName}_${rootProject.storeName}.apk")
+            }
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven {
+            // Google Maven Repository
+            url "https://maven.google.com"
+        }
+	maven { url 'http://maven.singular.net/' }
+	maven {
+            url  "https://adcolony.bintray.com/AdColony"
+        }
+        maven { 
+            url 'http://deltadna.bintray.com/android'
+        }
+        maven { 
+            url "https://s3.amazonaws.com/moat-sdk-builds"
+        }
+        maven {
+        url 'https://jitpack.io'
+        }
+}
+
+dependencies {
+    compile 'com.android.support:multidex:1.0.0'
+    compile "com.google.android.gms:play-services-ads:$googlePlayServicesVer"
+    compile "com.google.android.gms:play-services-base:$googlePlayServicesVer"
+    
+    if (rootProject.googlePlayGames == "true") {
+        compile "com.google.android.gms:play-services-games:$googlePlayServicesVer"
+        compile "com.google.android.gms:play-services-nearby:$googlePlayServicesVer"
+	compile "com.google.android.gms:play-services-auth:$googlePlayServicesVer"
+    }
+
+    def aarsList = []
+    // Compiling local AARs from libs
+    compile fileTree(dir: 'libs', include: '*.jar', exclude: excludeJarsList)
+    fileTree(dir: 'libs', include: '*.aar', exclude: excludeJarsList).each { File file ->
+        def aarName = file.name.lastIndexOf('.').with { it != -1 ? file.name[0..<it] : file.name }
+        println "aar: " + aarName
+        dependencies.add("compile", [name: aarName, ext: 'aar'])
+        aarsList.add(aarName)
+    }
+
+    projectLibs.each {
+        println "Compiling subproject: " + it
+        compile it
+    }
+
+    println "excluded jar list:" + excludeJarsList
+}
+
+psdk {
+    sdkVersion getProperty('psdkVer')
+    config getProperty('psdkConfig')
+    buildType getProperty('psdkBuildType')
+    downloadConfigFile getProperty('downloadPSDKConfigFile')
+    store getProperty('storeName')
+    isApp true
+    isUnityBuild true
+    s3AccessKey getProperty('awsS3AccessKey')
+    s3SecretKey getProperty('awsS3SecretKey')
+}
+
+
+def injectMultidexSupportToAndroidManifest() {
+    println "putting multidex android:name into application node in AndroidManifest.xml"
+    def manifestFile = android.sourceSets.main.manifest.getSrcFile()
+    def ns = new groovy.xml.Namespace("http://schemas.android.com/apk/res/android", "android")
+    def manifest = new XmlParser(false, true).parse(manifestFile)
+
+    /// Injecting multi dex support
+    manifest.application[0].attributes()[ns.name] = 'android.support.multidex.MultiDexApplication'
+
+    // injecting android theme
+    manifest.application[0].attributes()[ns.theme] = '@android:style/Theme.NoTitleBar.Fullscreen'
+
+    def xmlOutput = new StringWriter()
+    def xmlNodePrinter = new XmlNodePrinter(new PrintWriter(xmlOutput))
+    xmlNodePrinter.print(manifest)
+    //println xmlOutput.toString()
+    manifestFile.write(xmlOutput.toString(), 'UTF-8')
+}
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+def changingMainActivitySingleTaskToSingleTopInAndroidManifest() {
+    println "Changing main activity launch mode to SingleTops instead of SingleTask and clearing tasks cache in AndroidManifest.xml"
+    def manifestFile = android.sourceSets.main.manifest.getSrcFile()
+    def ns = new groovy.xml.Namespace("http://schemas.android.com/apk/res/android", "android")
+    def manifest = new XmlParser(false, true).parse(manifestFile)
+    manifest.application[0].activity.each { ac ->
+        ac.attributes().each {
+            if (it.key == ns.launchMode && it.value == 'singleTask') {
+                it.value = 'singleTop';
+            }
+        }
+    }
+    def xmlOutput = new StringWriter()
+    def xmlNodePrinter = new XmlNodePrinter(new PrintWriter(xmlOutput))
+    xmlNodePrinter.print(manifest)
+    //println xmlOutput.toString()
+    manifestFile.write(xmlOutput.toString(), 'UTF-8')
+}
+
+
+task updateManifestTask {
+    injectMultidexSupportToAndroidManifest()
+    changingMainActivitySingleTaskToSingleTopInAndroidManifest()
+}
+
+def IsManifestHasGoogleGcm() {
+    println "Checking if AndroidManifest.xml has Google Gcm"
+    def manifestFile = android.sourceSets.main.manifest.getSrcFile()
+    def ns = new groovy.xml.Namespace("http://schemas.android.com/apk/res/android", "android")
+    def manifest = new XmlParser(false, true).parse(manifestFile)
+    def rc = false
+    manifest.application[0].receiver.each { ac ->
+        ac.attributes().each {
+            if (it.key == ns.name && it.value == 'com.google.android.gms.gcm.GcmReceiver') {
+                println "got com.google.android.gms.gcm.GcmReceiver !!!"
+                rc = true
+            }
+        }
+    }
+    return rc
+}

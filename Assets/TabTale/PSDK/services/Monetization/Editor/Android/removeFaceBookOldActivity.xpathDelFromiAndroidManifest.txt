@@ -1,0 +1,1 @@
+/manifest/application/activity[@android:name="com.facebook.ads.InterstitialAdActivity"]

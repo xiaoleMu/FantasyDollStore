@@ -1,0 +1,12 @@
+
+{
+	"group": "psdk",
+	"libs": ["libsqlite3.dylib"],
+	"frameworks": ["SafariServices.framework","CoreMotion.framework","EventKitUI.framework","AdSupport.framework","AudioToolbox.framework","AVFoundation.framework","CoreBluetooth.framework","CoreGraphics.framework","CoreLocation.framework","CoreTelephony.framework","Foundation.framework","libxml2.dylib","MediaPlayer.framework","MessageUI.framework","StoreKit.framework","SystemConfiguration.framework","UIKit.framework","WebKit.framework:weak"],
+	"headerpaths": [],
+	"files": [],
+	"folders": [,],
+	"excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+	"buildSettings": {"GCC_ENABLE_CPP_EXCEPTIONS": "YES", "GCC_ENABLE_OBJC_EXCEPTIONS": "YES", "OTHER_LDFLAGS" : ["-ObjC"]}
+}
+		

@@ -1,0 +1,3 @@
+/manifest/application/activity[@android:name="com.startapp.android.publish.FullScreenActivity"]
+/manifest/application/activity[@android:name="com.startapp.android.publish.list3d.List3DActivity"]
+/manifest/application/activity[@android:name="com.startapp.android.publish.OverlayActivity"]

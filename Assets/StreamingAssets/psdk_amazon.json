@@ -1,0 +1,254 @@
+﻿{
+    "global" : {
+        "store" : "amazon",
+        "language" : "en",
+        "orientation" : "landscape",
+        "sdkVersion" : "",
+        "gameEngine" : "unity",
+        "audienceModeBuildOnly" : "mixed"
+    },
+    "configurationFetcher" : {
+        "included" : true,
+        "serverDomain" : "apptesting-gateway.ttpsdk.info"
+    },
+    "locationMgr" : {
+        "included" : true,
+        "timeIntervalSequence" : [
+            5,
+            5
+        ],
+        "sources" : {
+            "chartboost" : {
+                "firstDisplayAtSession" : 1
+            },
+            "interstitial" : {
+                "firstDisplayAtSession" : 1
+            },
+            "promotionPage" : {
+                "firstDisplayAtSession" : 1
+            }
+        },
+        "locations" : {
+            "sessionStart" : {
+                "firstDisplayAtSession" : 1,
+                "showEveryXDisplays" : 1,
+                "useShowEveryXDisplaysOrTimeBetweenPopups" : false,
+                "source" : [
+                    "chartboost"
+                ]
+            }
+        },
+        "sessionTime" : 0,
+        "gameTime" : 0,
+        "level" : 0,
+        "javascriptUrl" : "http://promo-images.ttpsdk.info/locationMgr/v003/skin.zip"
+    },
+    "interstitial" : {
+        "included" : true,
+        "interstitialsProviders" : [
+            
+        ]
+    },
+    "appShelf" : {
+        "included" : true,
+        "openOnNewActivity" : true,
+        "locations" : [
+            
+        ],
+        "serverDomain" : "apptesting-gateway.ttpsdk.info"
+    },
+    "promotionPage" : {
+        "included" : true,
+        "openOnNewActivity" : true,
+        "serverDomain" : "apptesting-gateway.ttpsdk.info",
+        "modeInfo" : {
+            "expiry" : "2999-12-31T23:59:59Z",
+            "modes" : {
+                "manual" : 100,
+                "controlled" : 0,
+                "test" : 0
+            }
+        }
+    },
+    "chartboost" : {
+        "included" : true,
+        "chartboostId" : "",
+        "chartboostSignature" : "",
+        "chartboostEnableInterstitial" : true
+    },
+    "gameLevelData" : {
+        "included" : false
+    },
+    "banners" : {
+        "included" : false,
+        "scaleScene" : false,
+        "showBannerAds" : true,
+        "showAdsAtTop" : false,
+        "adDisplayTime" : 5,
+        "useSmartBanners" : false,
+        "showBlockingAdsView" : true,
+        "houseAdsServerDomain" : "apptesting-gateway.ttpsdk.info",
+        "bannersProviders" : [
+            
+        ]
+    },
+    "rewardedAds" : {
+        "included" : true,
+        "rvProviders" : [
+            
+        ],
+        "flurryVideoSpace" : "",
+        "placementid" : "",
+        "fyberClientSecurityToken" : "",
+        "unityAdsZoneId" : "",
+        "admobKey" : "",
+        "vunglePlacementId" : "",
+        "applovinKey" : "",
+        "hyprMxDistributorId" : "",
+        "adColonyApplicationId" : "",
+        "moPubAdUnitId" : "",
+        "vungleApplicationId" : "",
+        "hyprMxPropertyId" : "",
+        "fyberAppId" : "",
+        "adColonyZoneId" : "",
+        "unityAdsGameId" : ""
+    },
+    "splash" : {
+        "included" : false,
+        "images" : [
+            {
+                "imagepath" : "Default.png",
+                "mintime" : 2
+            }
+        ]
+    },
+    "appsFlyer" : {
+        "included" : false,
+        "sendIDFA" : true,
+        "appsFlyerKey" : "",
+        "gcmProjectNumber" : ""
+    },
+    "singular" : {
+        "included" : true,
+        "key" : "",
+        "secret" : ""
+    },
+    "analytics" : {
+        "included" : true,
+        "gameAnalyticsServiceType" : [
+            "flurry",
+            "deltaDna"
+        ],
+        "psdkAnalyticsServiceType" : [
+            "flurry"
+        ],
+        "flurry" : {
+            "enableFlurryCrashReports" : true,
+            "key" : ""
+        },
+        "deltaDna" : {
+            "activateUsers" : 0,
+            "key" : "",
+            "collectUrl" : "",
+            "engageUrl" : ""
+        },
+        "ttAnalytics" : {
+            "interval" : 60,
+            "sendAndroidAdvertisersId" : true
+        }
+    },
+    "referrals" : {
+        
+    },
+    "socialGame" : {
+        "included" : false,
+        "leaderboardsIds" : {
+            
+        },
+        "achievementsIds" : {
+            
+        }
+    },
+    "gsdkSocialNetworks" : {
+        "included" : true
+    },
+    "rateUs" : {
+        "included" : true
+    },
+    "share" : {
+        "included" : false
+    },
+    "billing" : {
+        "included" : true,
+        "iaps" : [
+            {
+                "id" : "com.babyeducationtoys.diyfashion.fullversion",
+                "iapId" : "com.cocoplay.diyfashionamazon_fullversion",
+                "type" : "non-consumable",
+                "noAds" : true
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.allitems",
+                "iapId" : "com.cocoplay.diyfashionamazon_allitems",
+                "type" : "non-consumable",
+                "noAds" : false
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.noads",
+                "iapId" : "com.cocoplay.diyfashionamazon_noads",
+                "type" : "non-consumable",
+                "noAds" : true
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.hairsalon",
+                "iapId" : "com.cocoplay.diyfashionamazon_hairsalon",
+                "type" : "non-consumable",
+                "noAds" : false
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.dressdiy",
+                "iapId" : "com.cocoplay.diyfashionamazon_dressdiy",
+                "type" : "non-consumable",
+                "noAds" : false
+            }
+        ]
+    },
+    "externalConfiguration" : {
+        "rateMePopupEnabled" : true,
+        "buyMePopupEnabled" : true
+    },
+    "crashMonitoringTool" : {
+        "included" : true,
+        "hockeyAppKey" : ""
+    },
+    "packages" : {
+        "admob" : true,
+        "adcolony" : true,
+        "applovin" : true,
+        "deltadna" : true,
+        "facebook" : false,
+        "flurry" : true,
+        "inmobi" : true,
+        "millennial" : true,
+        "startapp" : true,
+        "ttanalytics" : true,
+        "unityads" : true,
+        "vungle" : true,
+        "hyprmx" : false,
+        "mopub" : true
+    },
+    "purchaseValidation" : {
+        "responseInCaseServerFailure" : false,
+        "active" : false,
+        "timeoutInterval" : 5,
+        "account" : "Coco Play"
+    },
+    "experiment" : {
+        
+    },
+    "userData" : {
+        "installedApps" : [
+            
+        ]
+    }
+}

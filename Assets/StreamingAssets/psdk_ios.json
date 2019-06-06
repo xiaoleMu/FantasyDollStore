@@ -1,0 +1,308 @@
+﻿{
+    "global" : {
+        "store" : "apple",
+        "language" : "en",
+        "orientation" : "landscape",
+        "sdkVersion" : "",
+        "gameEngine" : "unity",
+        "appId" : "1378931319",
+        "audienceModeBuildOnly" : "mixed",
+        "compatibilityMode" : false,
+        "applyAdmobFiltering" : "MA",
+        "brands" : [
+            "TT"
+        ]
+    },
+    "configurationFetcher" : {
+        "included" : true,
+        "serverDomain" : "apptesting-gateway.ttpsdk.info"
+    },
+    "locationMgr" : {
+        "included" : true,
+        "timeIntervalSequence" : [
+            5,
+            5
+        ],
+        "sources" : {
+            "chartboost" : {
+                "firstDisplayAtSession" : 1
+            },
+            "interstitial" : {
+                "firstDisplayAtSession" : 1
+            },
+            "promotionPage" : {
+                "firstDisplayAtSession" : 1
+            }
+        },
+        "locations" : {
+            "sceneTransitions" : {
+                "firstDisplayAtSession" : 1,
+                "showEveryXDisplays" : 1,
+                "useShowEveryXDisplaysOrTimeBetweenPopups" : false,
+                "source" : [
+                    "interstitial"
+                ]
+            },
+            "sessionStart" : {
+                "firstDisplayAtSession" : 1,
+                "showEveryXDisplays" : 1,
+                "useShowEveryXDisplaysOrTimeBetweenPopups" : false,
+                "source" : [
+                    "chartboost"
+                ]
+            },
+            "moreApps" : {
+                "source" : [
+                    "promotionPage"
+                ],
+                "forceShow" : true
+            }
+        },
+        "sessionTime" : 0,
+        "gameTime" : 0,
+        "level" : 0,
+        "javascriptUrl" : "http://promo-images.ttpsdk.info/locationMgr/v003/skin.zip",
+        "rewardedVideos" : {
+            "resetTimeBetweenPopups" : false,
+            "resetPopupDisplayCounter" : false
+        }
+    },
+    "interstitial" : {
+        "included" : true,
+        "interstitialsiPadProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "ca-app-pub-9764268380977068/3612032136"
+            }
+        ],
+        "interstitialsiPhoneProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "ca-app-pub-9764268380977068/7798689153"
+            }
+        ]
+    },
+    "appShelf" : {
+        "included" : true,
+        "openOnNewActivity" : true,
+        "locations" : [
+            
+        ],
+        "serverDomain" : "apptesting-gateway.ttpsdk.info"
+    },
+    "promotionPage" : {
+        "included" : true,
+        "openOnNewActivity" : true,
+        "serverDomain" : "apptesting-gateway.ttpsdk.info",
+        "modeInfo" : {
+            "expiry" : "2999-12-31T23:59:59Z",
+            "modes" : {
+                "manual" : 100,
+                "controlled" : 0,
+                "test" : 0
+            }
+        }
+    },
+    "chartboost" : {
+        "included" : true,
+        "chartboostId" : "51d96f7817ba47316a000000",
+        "chartboostSignature" : "428a6057a2a90ae4a3c83ebb8b477e5c204b2133",
+        "chartboostEnableInterstitial" : true
+    },
+    "gameLevelData" : {
+        "included" : false
+    },
+    "banners" : {
+        "included" : false,
+        "scaleScene" : false,
+        "showBannerAds" : false,
+        "showAdsAtTop" : false,
+        "adDisplayTime" : 5,
+        "useSmartBanners" : false,
+        "showBlockingAdsView" : true,
+        "houseAdsServerDomain" : "apptesting-gateway.ttpsdk.info",
+        "bannersiPadProviders" : [
+            
+        ],
+        "bannersiPhoneProviders" : [
+            
+        ]
+    },
+    "rewardedAds" : {
+        "included" : true,
+        "rvProviders" : [
+            {
+                "provider" : "vungle",
+                "vunglePlacementId" : "DIY_FASHION_STAR_IOS_TT-0083593",
+                "vungleApplicationId" : "5aec218cbf93fc2d6e8d58ab"
+            },
+            {
+                "provider" : "adcolony",
+                "adColonyZoneId" : "vzf74f9ef2154a4e238f",
+                "adColonyApplicationId" : "app7ba19fda310944a2a7"
+            },
+            {
+                "provider" : "unity-ads",
+                "unityAdsGameId" : "16982",
+                "unityAdsZoneId" : "incentivisedVideoZone"
+            }
+        ],
+        "flurryVideoSpace" : "",
+        "placementid" : "",
+        "fyberClientSecurityToken" : "",
+        "unityAdsZoneId" : "incentivisedVideoZone",
+        "admobKey" : "",
+        "vunglePlacementId" : "DIY_FASHION_STAR_IOS_TT-0083593",
+        "applovinKey" : "",
+        "adColonyApplicationId" : "app7ba19fda310944a2a7",
+        "moPubAdUnitId" : "",
+        "vungleApplicationId" : "5aec218cbf93fc2d6e8d58ab",
+        "fyberAppId" : "",
+        "adColonyZoneId" : "vzf74f9ef2154a4e238f",
+        "unityAdsGameId" : "16982"
+    },
+    "splash" : {
+        "included" : false,
+        "images" : [
+            {
+                "imagepath" : "splash.xib",
+                "mintime" : 2
+            }
+        ]
+    },
+    "appsFlyer" : {
+        "included" : false,
+        "sendIDFA" : false,
+        "appsFlyerKey" : "",
+        "appsFlyerAppId" : "",
+        "appsFlyerDevKey" : ""
+    },
+    "singular" : {
+        "included" : true,
+        "key" : "tabtale_dev_31bffb62",
+        "secret" : "980b190decf20b935cadf0137afa952c"
+    },
+    "safeDK" : {
+        "included" : false
+    },
+    "analytics" : {
+        "included" : true,
+        "gameAnalyticsServiceType" : [
+            "flurry",
+            "deltaDna"
+        ],
+        "psdkAnalyticsServiceType" : [
+            "flurry"
+        ],
+        "flurry" : {
+            "enableFlurryCrashReports" : true,
+            "key" : "DBDPPDNJ6FVRRXH6S3T2"
+        },
+        "deltaDna" : {
+            "key" : "",
+            "collectUrl" : "",
+            "engageUrl" : ""
+        },
+        "ttAnalytics" : {
+            "interval" : 60,
+            "sendIdfa" : true,
+            "sendIdfv" : false
+        }
+    },
+    "referrals" : {
+        
+    },
+    "socialGame" : {
+        "included" : false,
+        "leaderboardsIds" : {
+            
+        },
+        "achievementsIds" : {
+            
+        }
+    },
+    "gsdkSocialNetworks" : {
+        "included" : true
+    },
+    "rateUs" : {
+        "included" : true
+    },
+    "share" : {
+        "included" : false
+    },
+    "billing" : {
+        "included" : true,
+        "iaps" : [
+            {
+                "id" : "com.babyeducationtoys.diyfashion.fullversion",
+                "iapId" : "com.babyeducationtoys.diyfashion.fullversion",
+                "type" : "non-consumable",
+                "noAds" : true
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.allitems",
+                "iapId" : "com.babyeducationtoys.diyfashion.allitems",
+                "type" : "non-consumable",
+                "noAds" : false
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.noads",
+                "iapId" : "com.babyeducationtoys.diyfashion.noads",
+                "type" : "non-consumable",
+                "noAds" : true
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.hairsalon",
+                "iapId" : "com.babyeducationtoys.diyfashion.hairsalon",
+                "type" : "non-consumable",
+                "noAds" : false
+            },
+            {
+                "id" : "com.babyeducationtoys.diyfashion.dressdiy",
+                "iapId" : "com.babyeducationtoys.diyfashion.dressdiy",
+                "type" : "non-consumable",
+                "noAds" : false
+            }
+        ]
+    },
+    "externalConfiguration" : {
+        "rateMePopupEnabled" : true,
+        "buyMePopupEnabled" : true
+    },
+    "crashMonitoringTool" : {
+        "included" : true,
+        "hockeyAppKey" : "320c9d553bed421a9d93cafd8e1ee6e2"
+    },
+    "packages" : {
+        "admob" : true,
+        "adcolony" : true,
+        "applovin" : true,
+        "deltadna" : false,
+        "facebook" : false,
+        "flurry" : true,
+        "inmobi" : true,
+        "millennial" : true,
+        "startapp" : true,
+        "ttanalytics" : true,
+        "unityads" : true,
+        "vungle" : true,
+        "mopub" : true
+    },
+    "purchaseValidation" : {
+        "responseInCaseServerFailure" : false,
+        "active" : true,
+        "timeoutInterval" : 5,
+        "account" : "Baby Education Animal Weather Toys"
+    },
+    "experiment" : {
+        
+    },
+    "userData" : {
+        "installedApps" : [
+            
+        ]
+    },
+    "remoteAssets" : {
+        "mode" : "none"
+    }
+}

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.unity3d.player" android:installLocation="preferExternal" android:versionCode="1" android:versionName="1.0">
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove" xmlns:tools="http://schemas.android.com/tools" />
+  <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:remove="android:maxSdkVersion" xmlns:tools="http://schemas.android.com/tools" />
+  <uses-permission android:name="com.android.vending.BILLING" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+  <application android:theme="@style/UnityThemeSelector" android:icon="@drawable/app_icon" android:label="@string/app_name" android:debuggable="true" android:allowBackup="true" android:hardwareAccelerated="true">
+=======
+  <application android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:icon="@drawable/app_icon" android:label="@string/app_name" android:debuggable="true" android:allowBackup="true" android:hardwareAccelerated="true">
+>>>>>>> 6d46804d... nbo_test_step2: - update all submodules. - fixed script error because of prime31. - remove empty folder metas.
+=======
+  <application android:theme="@style/UnityThemeSelector" android:icon="@drawable/app_icon" android:label="@string/app_name" android:debuggable="true" android:allowBackup="true" android:hardwareAccelerated="true">
+>>>>>>> 6c1ee5e0... nbo_test_step2: modify android.theme to "style/UnityThemeSelector"
+    <meta-data android:name="com.tabtale.androidpermissionswrapper.AndroidPermissionWrapperActivty" android:value="TTUnityPlayerActivityProxy" />
+    <activity android:name="com.tabtale.publishing.ttunity.TTUnityPlayerNativeActivity" android:label="@string/app_name" android:launchMode="singleTop" android:clearTaskOnLaunch="false" hardwareAccelerated="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
+      <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
+    </activity>
+    <!--  RECIEVERS -->
+    <activity android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    <activity android:name="com.unity3d.player.UnityPlayerNativeActivity">
+      <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
+    </activity>
+    <activity android:name="com.tabtale.publishingsdk.monetization.appshelf.WebViewActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:hardwareAccelerated="true" />
+    <activity android:name="com.jirbo.adcolony.AdColonyOverlay" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:name="com.jirbo.adcolony.AdColonyFullscreen" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+    <activity android:name="com.jirbo.adcolony.AdColonyBrowser" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+    <activity android:name="com.vungle.publisher.FullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <service android:name="com.vungle.publisher.VungleService" android:exported="false" />
+    <activity android:name="com.vungle.sdk.VungleAdvert" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <service android:name="com.vungle.sdk.VungleIntentService" />
+    <activity android:name="com.tabtale.publishingsdk.monetization.promotionpage.PromotionPageWebViewActivity" android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <receiver android:name="com.tabtale.publishingsdk.monetization.promotionpage.PromotionPageWebView">
+      <intent-filter>
+        <action android:name="com.tabtale.publishingsdk.monetization.promotionpage.PromotionPageWebViewActivity.PROMOTION_PAGE_LINK" />
+        <action android:name="com.tabtale.publishingsdk.monetization.promotionpage.PromotionPageWebViewActivity.PROMOTION_PAGE_SHOW" />
+        <action android:name="com.tabtale.publishingsdk.monetization.promotionpage.PromotionPageWebViewActivity.PROMOTION_PAGE_PLAY_SOUND" />
+        <action android:name="com.tabtale.publishingsdk.monetization.promotionpage.PromotionPageWebViewActivity.PROMOTION_PAGE_START_ANIMATION_ENDED" />
+      </intent-filter>
+    </receiver>
+    <activity android:name="com.chartboost.sdk.CBImpressionActivity" android:excludeFromRecents="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.fyber.ads.videos.RewardedVideoActivity" android:configChanges="screenSize|orientation" android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent" />
+    <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" />
+    <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" />
+    <meta-data android:name="applovin.sdk.key" android:value="TREvWeSbneklepMTdxWL5KCqUD57xezP4CIarlBcOwM1kiVMe0hkLvTq7dy3HwSL6mxyV7Tu1wwlcP5FQo-nhW" />
+    <service android:name="com.fyber.cache.CacheVideoDownloadService" android:exported="false" />
+    <receiver android:name="com.tabtale.publishingsdk.services.IRBroadcastReceiver" android:exported="true">
+      <intent-filter>
+        <action android:name="com.android.vending.INSTALL_REFERRER" />
+      </intent-filter>
+    </receiver>
+    <meta-data android:name="com.tabtale.publishingsdk.core.utils.permissions.AndroidPermissionWrapperActivty" android:value="TTUnityPlayerActivityProxy" />
+    <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
+    <activity android:name="com.vungle.publisher.VideoFullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <activity android:name="com.vungle.publisher.MraidFullScreenAdActivity" android:configChanges="keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:name="com.adcolony.sdk.AdColonyInterstitialActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+    <activity android:name="com.adcolony.sdk.AdColonyAdViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" />
+    <activity android:name="com.inmobi.rendering.InMobiAdActivity" android:configChanges="keyboardHidden|orientation|keyboard|smallestScreenSize|screenSize|screenLayout" android:hardwareAccelerated="true" android:theme="@android:style/Theme.NoTitleBar" tools:ignore="UnusedAttribute" xmlns:tools="http://schemas.android.com/tools" />
+    <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.mopub.mobileads.RewardedMraidActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+    <activity android:name="com.mopub.common.privacy.ConsentDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+  </application>
+</manifest>

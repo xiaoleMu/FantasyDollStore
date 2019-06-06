@@ -1,0 +1,20 @@
+
+#Android Configs
+targetSdk=24
+buildToolsVer=25.0.0
+minSdk=16
+googlePlayServicesVer=15.0.0
+android.builder.sdkDownload=true
+// for filter onlu armeabi-v7a and x86 (e.g. removing armeabi - mainly cause Fyber-AdColony)
+android.useDepreactedNdk=true
+
+#PSDK Configs
+//psdkPublishingPath=/Users/israelp/gitrep/publishing/master/PublishingSDK
+psdkConfig=compile
+psdkBuildType=debug
+downloadPSDKConfigFile=false
+awsS3AccessKey=
+awsS3SecretKey=
+
+            psdkVer=4.18.0.1.2
+        

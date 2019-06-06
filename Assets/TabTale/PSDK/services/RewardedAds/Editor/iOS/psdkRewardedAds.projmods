@@ -1,0 +1,13 @@
+{
+    "group": "psdk",
+    "libs": ["libsqlite3.dylib", "libz.dylib"],
+    "frameworks": [ "WatchConnectivity.framework:weak","GLKit.framework","CoreMotion.framework","WebKit.framework:weak","MessageUI.framework","MediaPlayer.framework","Social.framework","AdSupport.framework","StoreKit.framework","CoreTelephony.framework","Accelerate.framework","AVFoundation.framework","CoreGraphics.framework","CoreLocation.framework","CoreMedia.framework","Foundation.framework","MobileCoreServices.framework","QuartzCore.framework","SystemConfiguration.framework","UIKit.framework"], 
+    "headerpaths": [],                    
+    "files": [	"RewardedAds.framework"   ],
+    "folders": [],
+    "excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+    "buildSettings": { 
+    	"GCC_ENABLE_CPP_EXCEPTIONS": "YES",
+    	"GCC_ENABLE_OBJC_EXCEPTIONS": "YES",
+    	"OTHER_LDFLAGS" : ["-ObjC"]
+    }}

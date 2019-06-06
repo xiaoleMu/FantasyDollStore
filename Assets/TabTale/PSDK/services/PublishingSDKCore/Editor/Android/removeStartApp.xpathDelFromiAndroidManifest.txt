@@ -1,0 +1,5 @@
+/manifest/application/activity[@android:name="com.startapp.android.publish.ads.list3d.List3DActivity"]
+/manifest/application/activity[@android:name="com.startapp.android.publish.adsCommon.activities.OverlayActivity"]
+/manifest/application/activity[@android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity"]
+/manifest/application/service[@android:name="com.startapp.android.publish.common.metaData.PeriodicMetaDataService"]
+/manifest/application/receiver[@android:name="com.startapp.android.publish.common.metaData.BootCompleteListener"]

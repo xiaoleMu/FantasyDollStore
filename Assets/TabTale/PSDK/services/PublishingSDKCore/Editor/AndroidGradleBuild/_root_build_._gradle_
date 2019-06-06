@@ -1,0 +1,132 @@
+String awsS3AccessKeyTemp = null
+String awsS3SecretKeyTemp = null
+if (project.hasProperty('awsS3AccessKey') && project.hasProperty('awsS3SecretKey') &&
+        project.awsS3AccessKey && project.awsS3SecretKey) {
+    awsS3AccessKeyTemp = awsS3AccessKey
+    awsS3SecretKeyTemp = awsS3SecretKey
+}
+else if (System.getenv()['AWS_ACCESS_KEY_ID'] && System.getenv()['AWS_SECRET_ACCESS_KEY']) {
+    awsS3AccessKeyTemp = System.getenv()['AWS_ACCESS_KEY_ID']
+    awsS3SecretKeyTemp = System.getenv()['AWS_SECRET_ACCESS_KEY']
+}
+
+if (!awsS3AccessKeyTemp) {
+    throw new GradleException("awsS3AccessKey and awsS3SecretKey does not exists")
+}
+
+allprojects {
+repositories {
+    maven {
+            // Google Maven Repository
+            url "https://maven.google.com"
+        }
+
+}
+
+    ext {
+        awsS3AccessKey = awsS3AccessKeyTemp
+        awsS3SecretKey = awsS3SecretKeyTemp
+    }
+}
+
+buildscript {    
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ext.excludeJarsList = ['fyber-flurry.aar', 'android-support-v*.jar', 'google-play-services.jar',
+                       'google-play-services_lib.aar', 'play-services-ads-*.aar',
+                       'play-services-base-*.aar', 'play-services-gcm-*.aar']
+ext.excludedProjects = subprojects.findAll {
+    (it.name.startsWith("play-services-base")
+            || it.name.startsWith("play-services-ads")
+            || it.name.startsWith("play-services-gcm")
+            || it.name.startsWith("play-services-games"))
+}
+def excludedDirs = ['app', 'build', 'gradle']
+ext.projectLibs = []
+
+rootDir.listFiles().each { file ->
+    if (file.isFile() || file.name.startsWith('.') || file.name in excludedDirs ||
+            excludedProjects.any { it.name == file.name }) {
+        return
+    }
+    projectLibs.add(project(":$file.name"))
+}
+
+configure(projectLibs) {
+    //or ':Android:AndroidApps' not sure
+    println "applying android-library plugin to $project"
+    apply plugin: 'com.android.library'
+
+    if (!rootProject.getChildProjects().containsKey("unity-android-resources") || project != project(":unity-android-resources")) {
+        dependencies {
+            println project.name + " adding app/libs jars to classpath"
+            compile "com.google.android.gms:play-services-base:$googlePlayServicesVer"
+            compile fileTree(include: '*.jar', dir: 'libs', exclude: 'android-support-v*.jar')
+            provided fileTree(dir: "$rootProject.projectDir/app/libs", include: '*.jar', exclude: excludeJarsList)
+        }
+    }
+
+    android {
+        publishNonDefault true
+
+        compileSdkVersion targetSdk.toInteger()
+        buildToolsVersion buildToolsVer
+
+        defaultConfig {
+            minSdkVersion minSdk
+        }
+
+        lintOptions {
+            checkReleaseBuilds false
+        }
+
+        sourceSets {
+            main {
+                manifest.srcFile 'AndroidManifest.xml'
+                java.srcDirs = ['src']
+                resources.srcDirs = ['src']
+                aidl.srcDirs = ['src']
+                renderscript.srcDirs = ['src']
+                res.srcDirs = ['res']
+                assets.srcDirs = ['assets']
+                //jniLibs.srcDirs = ['libs', "$rootProject.projectDir/$productName/libs"]
+                jniLibs.srcDirs = ['libs']
+            }
+
+            // changing unity-android-resources project packageName
+            if (rootProject.getChildProjects().containsKey("unity-android-resources") && project == project(":unity-android-resources")) {
+                def manifestOutFile = android.sourceSets.main.manifest.getSrcFile()
+                def newFileContents = manifestOutFile.getText('UTF-8').replace("\"${bundleIdentifier}\"", "\"${bundleIdentifier}.unityAndroidResources\"")
+                manifestOutFile.write(newFileContents, 'UTF-8')
+            }
+
+            // Move the tests to tests/java, tests/res, etc...
+            instrumentTest.setRoot('tests')
+
+            // Move the build types to build-types/<type>
+            // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+            // This moves them out of them default location under src/<type>/... which would
+            // conflict with src/ being used by the main source set.
+            // Adding new build types or product flavors should be accompanied
+            // by a similar customization.
+            debug.setRoot('build-types/debug')
+            release.setRoot('build-types/release')
+        }
+    }
+}
+
+if (rootProject.getChildProjects().containsKey("unity-android-resources")) {
+    project(":unity-android-resources") {
+        def manifestOutFile = android.sourceSets.main.manifest.getSrcFile()
+        def newFileContents = manifestOutFile.getText('UTF-8').
+                replace("\"${bundleIdentifier}\"", "\"${bundleIdentifier}.unityAndroidResources\"")
+        manifestOutFile.write(newFileContents, 'UTF-8')
+    }
+}

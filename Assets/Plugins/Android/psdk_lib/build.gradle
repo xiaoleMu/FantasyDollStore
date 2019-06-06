@@ -1,0 +1,74 @@
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+}
+
+buildscript {
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    }
+    
+    String awsS3AccessKeyTemp = null
+    String awsS3SecretKeyTemp = null
+    if (project.hasProperty('awsS3AccessKey') && project.hasProperty('awsS3SecretKey') &&
+            project.awsS3AccessKey && project.awsS3SecretKey) {
+        awsS3AccessKeyTemp = awsS3AccessKey
+        awsS3SecretKeyTemp = awsS3SecretKey
+    }
+    else if (System.getenv()['AWS_ACCESS_KEY_ID'] && System.getenv()['AWS_SECRET_ACCESS_KEY']) {
+        awsS3AccessKeyTemp = System.getenv()['AWS_ACCESS_KEY_ID']
+        awsS3SecretKeyTemp = System.getenv()['AWS_SECRET_ACCESS_KEY']
+    }
+
+    if (!awsS3AccessKeyTemp) {
+        throw new GradleException("awsS3AccessKey and awsS3SecretKey does not exists")
+    }
+
+    allprojects {
+        ext {
+            awsS3AccessKey = awsS3AccessKeyTemp
+            awsS3SecretKey = awsS3SecretKeyTemp
+            psdkVer = "4.18.0.1.2"
+            psdkConfig = "compile"
+            psdkBuildType = "debug"
+            downloadPSDKConfigFile = "false"
+        }
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 's3://com.tabtale.repo/android/maven/gradle-plugins'
+            credentials(AwsCredentials) {
+                accessKey getProperty('awsS3AccessKey')
+                secretKey getProperty('awsS3SecretKey')
+            }
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.tabtale:android:1.0'
+        classpath 'com.tabtale.plugins:publishingsdk:1.3.+'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.tabtale.android'
+apply plugin: 'com.tabtale.plugins.publishingsdk'
+
+android {
+    compileSdkVersion getProperty('targetSdk').toInteger()
+    buildToolsVersion '26.0.2'
+}
+
+psdk {
+    sdkVersion getProperty('psdkVer')
+    config getProperty('psdkConfig')
+    buildType getProperty('psdkBuildType')
+    downloadConfigFile getProperty('downloadPSDKConfigFile')
+    s3AccessKey getProperty('awsS3AccessKey')
+    s3SecretKey getProperty('awsS3SecretKey')
+}

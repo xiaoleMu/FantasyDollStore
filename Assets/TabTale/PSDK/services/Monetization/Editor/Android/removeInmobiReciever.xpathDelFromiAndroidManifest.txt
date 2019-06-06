@@ -1,0 +1,3 @@
+/manifest/application/receiver[@android:name="com.inmobi.commons.analytics.androidsdk.IMAdTrackerReceiver"]
+/manifest/application/activity[@android:name="com.inmobi.androidsdk.IMBrowserActivity"]
+/manifest/application/service[@android:name="com.inmobi.commons.internal.ActivityRecognitionManager"]

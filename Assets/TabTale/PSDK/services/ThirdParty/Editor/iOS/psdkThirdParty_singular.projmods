@@ -1,0 +1,12 @@
+
+{
+	"group": "psdk",
+	"libs": ["libsqlite3.dylib"],
+	"frameworks": ["SystemConfiguration.framework","iAd.framework","Security.framework","AdSupport.framework"],
+	"headerpaths": [],
+	"files": [],
+	"folders": [,"Singular.h",],
+	"excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+	"buildSettings": {}
+}
+		

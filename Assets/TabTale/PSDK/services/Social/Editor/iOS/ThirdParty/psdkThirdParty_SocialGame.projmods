@@ -1,0 +1,12 @@
+
+{
+	"group": "psdk",
+	"libs": [],
+	"frameworks": ["Social.framework"],
+	"headerpaths": [],
+	"files": [],
+	"folders": [,],
+	"excludes": ["^.*.DS_Store$","^.*.meta$", "^.*.mdown^", "^.*.pdf$", "^.*.svn$"],
+	"buildSettings": {"GCC_ENABLE_CPP_EXCEPTIONS": "YES", "GCC_ENABLE_OBJC_EXCEPTIONS": "YES", "OTHER_LDFLAGS" : ["-ObjC"]}
+}
+		

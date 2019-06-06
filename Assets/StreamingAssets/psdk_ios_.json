@@ -1,0 +1,195 @@
+{
+    "global" : {
+        "store" : "apple",
+        "language" : "en",
+        "orientation" : "portrait",
+        "sdkVersion" : "",
+        "gameEngine" : "unity",
+        "appId" : "300300300"
+    },
+    "configurationFetcher" : {
+        "included" : true,
+        "serverDomain" : "tt-apptesting-gatewayzuul.elasticbeanstalk.com"
+    },
+    "locationMgr" : {
+        "included" : true,
+        "timeIntervalSequence" : [
+            5,
+            5
+        ],
+        "sources" : {
+            "chartboost" : {
+                "firstDisplayAtSession" : 1
+            },
+            "appShelf" : {
+                "firstDisplayAtSession" : 1
+            },
+            "interstitial" : {
+                "firstDisplayAtSession" : 1
+            },
+            "promotionPage" : {
+                "firstDisplayAtSession" : 1
+            }
+        },
+        "locations" : {
+            "sceneTransitions" : {
+                "source" : [
+                    "chartboost"
+                ]
+            },
+            "moreAppsInThisSeries" : {
+                "source" : [
+                    "appShelf"
+                ],
+                "forceShow" : true
+            },
+            "sessionStart" : {
+                "firstDisplayAtSession" : 1,
+                "source" : [
+                    "chartboost"
+                ]
+            },
+            "backToMainMenu" : {
+                "source" : [
+                    "appShelf"
+                ]
+            },
+            "replayLevel" : {
+                "source" : [
+                    "appShelf"
+                ]
+            },
+            "moreApps" : {
+                "source" : [
+                    "appShelf"
+                ],
+                "forceShow" : true
+            }
+        }
+    },
+    "interstitial" : {
+        "included" : true,
+        "adsForChildDirectedTreatment" : true,
+        "interstitialsiPadProviders" : [
+            
+        ],
+        "interstitialsiPhoneProviders" : [
+            
+        ]
+    },
+    "appShelf" : {
+        "included" : true,
+        "openOnNewActivity" : true,
+        "locations" : [
+            {
+                "loc" : "moreApps",
+                "id" : 1
+            },
+            {
+                "loc" : "moreAppsInThisSeries",
+                "id" : 2
+            },
+            {
+                "loc" : "backToMainMenu",
+                "id" : 4
+            },
+            {
+                "loc" : "replayLevel",
+                "id" : 4
+            }
+        ]
+    },
+    "promotionPage" : {
+        "included" : true,
+        "openOnNewActivity" : true
+    },
+    "chartboost" : {
+        "included" : true,
+        "chartboostId" : "fghsfghsfgh",
+        "chartboostSignature" : "fghsfhfhfghf"
+    },
+    "gameLevelData" : {
+        "included" : true
+    },
+    "banners" : {
+        "included" : true,
+        "scaleScene" : false,
+        "showBannerAds" : true,
+        "showAdsAtTop" : false,
+        "adDisplayTime" : 5,
+        "useSmartBanners" : false,
+        "adsForChildDirectedTreatment" : true,
+        "showBlockingAdsView" : false,
+        "bannersiPadProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "xnjxfgh"
+            }
+        ],
+        "bannersiPhoneProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "gfghsfghfgh"
+            }
+        ]
+    },
+    "rewardedAds" : {
+        "included" : true,
+        "vungleApplicationId" : "",
+        "flurryVideoSpace" : "",
+        "unityAdsZoneId" : "tertwertewrte",
+        "adColonyZoneId" : "",
+        "unityAdsGameId" : "tertewtr",
+        "adColonyApplicationId" : ""
+    },
+    "splash" : {
+        "included" : true,
+        "images" : [
+            {
+                "imagepath" : "Default.png",
+                "mintime" : 2
+            }
+        ]
+    },
+    "analytics" : {
+        "included" : true,
+        "gameAnalyticsServiceType" : [
+            "flurry",
+            "deltaDna"
+        ],
+        "psdkAnalyticsServiceType" : [
+            "flurry"
+        ],
+        "flurry" : {
+            "enableFlurryCrashReports" : true,
+            "key" : "N9VSWCTRQP7KFK2RFXRY"
+        },
+        "deltaDna" : {
+            "key" : "",
+            "collectUrl" : "",
+            "engageUrl" : ""
+        },
+        "ttAnalytics" : {
+            
+        }
+    },
+    "referrals" : {
+        
+    },
+    "socialGame" : {
+        "included" : true,
+        "leaderboardsIds" : {
+            
+        },
+        "achievementsIds" : {
+            
+        }
+    },
+    "externalConfiguration" : {
+        "rateMePopupEnabled" : false,
+        "buyMePopupEnabled" : false
+    },
+    "packages" : {
+        "deltadna" : false
+    }
+}

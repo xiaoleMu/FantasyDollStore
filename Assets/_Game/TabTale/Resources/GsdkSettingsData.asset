@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa9bf8ad14c04464b7337d925b87556, type: 3}
+  m_Name: GsdkSettingsData
+  m_EditorClassIdentifier: 
+  _isConnectionEnabled: 1
+  _socialScoreRefreshCoolDownEnabled: 1
+  _isDebugEnabled: 0
+  _isRewardSystemEnabled: 1
+  _isEventSystemEnabled: 1
+  _isCoreLoggerEnabled: 0
+  _isShowingSessionStartInEditor: 0
+  _iapGooglePublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlWWW1p79KjdV1y14YzONOJKB19iEtxQ+AKA2mAbWT6QwhpxdwgmYvoyWZ8CLc7EUtKiMeLk5BY4v3qsHJobfaSdfl94b65A2clIY2KYrHbp4SRVJWLmx3BPrGN4xMFD+ocJmFxkFdfcRGd8IfcPYOoDfiXx4T/s+FnvCo9dW65CU8mThxWzzof0ceGE6gSob+0ZAL55nJ4h34GbQJuK6XiHBUm3Ws1fl0BM1wICRTbpEk1MDTXMHFaK8wN21JQQQq7jwlBFX/JPmtH128QBkYUTwR3RSQcjGZoQpUMewbOb2/lAZReXLWUA+CEKYfdbWJiec9YP86NKBHdOKq2ewgQIDAQAB

@@ -1,0 +1,175 @@
+{
+    "global" : {
+        "store" : "google",
+        "language" : "en",
+        "orientation" : "portrait",
+        "sdkVersion" : "",
+        "gameEngine" : "unity"
+    },
+    "configurationFetcher" : {
+        "included" : true,
+        "serverDomain" : "tt-apptesting-gatewayzuul.elasticbeanstalk.com"
+    },
+    "locationMgr" : {
+        "included" : true,
+        "timeIntervalSequence" : [
+            15,
+            30
+        ],
+        "sources" : {
+            "chartboost" : {
+                "firstDisplayAtSession" : 1
+            },
+            "appShelf" : {
+                "firstDisplayAtSession" : 1
+            },
+            "interstitial" : {
+                "firstDisplayAtSession" : 1
+            },
+            "promotionPage" : {
+                "firstDisplayAtSession" : 1
+            }
+        },
+        "locations" : {
+            "sceneTransitions" : {
+                "source" : [
+                    "interstitial"
+                ]
+            },
+            "moreAppsInThisSeries" : {
+                "source" : [
+                    "appShelf"
+                ],
+                "forceShow" : true
+            },
+            "sessionStart" : {
+                "firstDisplayAtSession" : 1,
+                "source" : [
+                    "chartboost"
+                ]
+            },
+            "moreApps" : {
+                "source" : [
+                    "appShelf"
+                ],
+                "forceShow" : true
+            }
+        }
+    },
+    "interstitial" : {
+        "included" : true,
+        "adsForChildDirectedTreatment" : true,
+        "interstitialsProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "dfzhdfhzdsfhzdfhdzfh"
+            }
+        ]
+    },
+    "appShelf" : {
+        "included" : true,
+        "openOnNewActivity" : true,
+        "locations" : [
+            {
+                "loc" : "moreApps",
+                "id" : 1
+            },
+            {
+                "loc" : "moreAppsInThisSeries",
+                "id" : 2
+            }
+        ]
+    },
+    "promotionPage" : {
+        "included" : true,
+        "openOnNewActivity" : true
+    },
+    "chartboost" : {
+        "included" : true,
+        "chartboostId" : "adFHadfhadfh",
+        "chartboostSignature" : "hfdhfhfadhfaddfhadh"
+    },
+    "gameLevelData" : {
+        "included" : true
+    },
+    "banners" : {
+        "included" : true,
+        "scaleScene" : false,
+        "showBannerAds" : true,
+        "showAdsAtTop" : false,
+        "adDisplayTime" : 30,
+        "useSmartBanners" : false,
+        "adsForChildDirectedTreatment" : true,
+        "showBlockingAdsView" : false,
+        "bannersProviders" : [
+            {
+                "provider" : "admob",
+                "adKey" : "xdgbfbdzfhzfhb"
+            }
+        ]
+    },
+    "rewardedAds" : {
+        "included" : true,
+        "vungleApplicationId" : "",
+        "flurryVideoSpace" : "",
+        "unityAdsZoneId" : "",
+        "adColonyZoneId" : "",
+        "unityAdsGameId" : "",
+        "adColonyApplicationId" : ""
+    },
+    "splash" : {
+        "included" : true,
+        "images" : [
+            {
+                "imagepath" : "Default.png",
+                "mintime" : 2
+            }
+        ]
+    },
+    "appsFlyer" : {
+        "included" : true,
+        "sendIDFA" : false,
+        "appsFlyerKey" : ""
+    },
+    "analytics" : {
+        "included" : true,
+        "gameAnalyticsServiceType" : [
+            "flurry",
+            "deltaDna"
+        ],
+        "psdkAnalyticsServiceType" : [
+            "flurry"
+        ],
+        "flurry" : {
+            "enableFlurryCrashReports" : true,
+            "key" : "DFJZQV9XJBHVG468N5F8"
+        },
+        "deltaDna" : {
+            "key" : "",
+            "collectUrl" : "",
+            "engageUrl" : ""
+        },
+        "ttAnalytics" : {
+            
+        }
+    },
+    "referrals" : {
+        
+    },
+    "socialGame" : {
+        "included" : true,
+        "leaderboardsIds" : {
+            
+        },
+        "achievementsIds" : {
+            
+        }
+    },
+    "externalConfiguration" : {
+        "rateMePopupEnabled" : false,
+        "buyMePopupEnabled" : false
+    },
+    "packages" : {
+        "deltadna" : false
+    }
+}

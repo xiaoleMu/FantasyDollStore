@@ -1,0 +1,5 @@
+/manifest/uses-permission[contains(@android:name,'permission.C2D_MESSAGE')]
+/manifest/permission[contains(@android:name,'permission.C2D_MESSAGE')]
+/manifest/application/receiver[@android:name="com.appsflyer.MultipleInstallBroadcastReceiver"]
+/manifest/application/activity[@android:name="com.appsflyer.AppsFlyerOverrideActivity"]
+/manifest/application/receiver[@android:name="com.tabtale.publishingsdk.psdksingular.SingularMultipleInstallBroadcastReceiver"]

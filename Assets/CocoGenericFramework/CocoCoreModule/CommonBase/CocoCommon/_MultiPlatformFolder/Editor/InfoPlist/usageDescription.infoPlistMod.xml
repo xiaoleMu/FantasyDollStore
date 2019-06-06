@@ -1,0 +1,10 @@
+<plist>
+    <dict>
+        <key>NSCameraUsageDescription</key>
+        <string>Application is using the camera only when you open a camera related scene</string>
+        <key>NSPhotoLibraryAddUsageDescription</key>
+        <string>Application is saving the image to the photo library on specificic scenes</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Application is using the photo library on specificic scenes</string>
+    </dict>
+</plist>

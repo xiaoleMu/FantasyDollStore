@@ -1,0 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tabtale.publishingsdk.social_lib"> 
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
+</manifest>

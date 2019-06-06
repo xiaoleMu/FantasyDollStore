@@ -1,0 +1,15 @@
+{
+
+  "syncType":"Off",
+  "syncLoopLength" : "8.0",
+  
+  "server" : "https://enter-server-address.appspot.com/",  
+  
+  "TheActualServerParameter" : "server", 
+
+  "clientVersion" : "1.0",
+  "allowPlayOffline" : false,
+  "fakeFacebookId" : "0",
+  "fakeGameCenterId" : "0",
+  "fakePlayServicesId" : "0"
+}

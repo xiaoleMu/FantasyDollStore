@@ -1,0 +1,157 @@
+No. = CN
+txt_logo = DIY时尚达人
+texture_logo = logo_cn
+texture_intro = intro_cn
+txture_loading_info_loading = 正在载入...
+texture_privacy_policy = privacy_policy_cn
+texture_terms_user = 使用条款
+txt_privacy_policy = 隐私条款
+txt_terms_user = 使用条款
+txt_introduction = 简介
+txt_more_game = 更多游戏
+
+
+
+txt_store_title = 商店
+txt_mini_store_title = 迷你商店
+txt_store_buy = 立即购买
+txt_store_bigsale = 特价
+txt_specialoffer_fullversition = 解锁全部场景
+txt_store_discount = 获得所有服装道具
+txt_store_product_unlocked = 已购买
+txt_store_product_title_01 = 完整版本
+txt_store_product_title_01_img = store_full_version_cn
+txt_store_product_title_01_content = 获取全部道具场景和去除广告
+texture_store_fullversion = fullversion_cn
+txt_store_product_title_02 = 无限舞会
+txt_store_product_title_03 = 拍照
+txt_store_product_title_04 = 解锁发型沙龙
+txt_store_product_title_05 = 解锁所有物品
+txt_store_product_title_06 = 解锁裙子DIY
+txt_store_product_title_07 = 去除广告
+txt_store_btn_restore = 恢复购买
+texture_store_restore = restore_cn
+txt_store_remove_ads = 去除广告
+txt_store_no_ads = 广告已去除
+txt_store_off = 五折
+txt_video_free = 免费
+txt_store_sall = 热销
+
+txt_app_rate_title = 喜欢DIY时装达人吗？
+txt_app_rate_rateus = 为游戏打分，\n鼓励我们不断更新！
+txt_app_rate_not_ask_empty = rateus_point_cn
+txt_app_rate_not_ask_full = 不再显示
+txt_app_rate_now = 现在评价
+txt_app_rate_later = 稍后
+
+txt_rank_title = 排行榜
+txt_rank_rank = 排名
+txt_rank_fans = 人气值
+txt_rank_top_video = 上榜视频
+txt_rank_player = 作者
+txt_rank_new = 新
+
+txt_map_video_title = 我的DIY
+txt_map_video_views = {0} 次观看
+txt_map_video_post = 发布
+txt_map_video_name = 我的DIY第{0}期
+txt_map_video_Empty = 空
+sprite_banner_title = video/ui/banner_title_cn
+sprite_web_video_txt = video/ui/web_video_txt_cn
+
+txt_vote_do_better = title_txt_cn
+txt_vote_buy = 立即购买
+txt_dance_savevideo = 视频已保存
+
+txt_notification_hello_weekly_1 = 这里有太多破旧的东西需要变得时尚！赶快回来！
+txt_notification_hello_weekly_2 = 你的粉丝需要灵感！快来展示你的DIY魔法！
+txt_notification_hello_weekly_3 = 是时候证明你就是自拍女王了。快来赢下自拍比赛！
+txt_notification_hello_weekly_4 = 快来展现创意，提出新的DIY改造方案！
+txt_notification_hello_weekly_5 = 你的粉丝想你啦。来展现完美的DIY技巧！
+
+txt_character_scelect = 选择你的角色
+
+
+txt_permission_open_settings = 设置
+txt_permission_rationale_save_to_gallery = 我们想把您可爱的照片保存在您的相册中！
+txt_permission_rationale_pick_from_gallery = 我们想在您的相册中选一张您可爱的照片！
+txt_permission_rationale_use_camera = 我们想用您的相机给您可爱的女孩拍张照！
+
+txt_needstar_title = 你需要更多的星星来解锁障碍赛，完成其他场景可以赢得星星。
+txt_profile_rank = 排名
+txt_profile = 个人资料
+txt_profile_name = 你的名字
+
+txt_profile_skills = 技能
+
+txt_age_skip = 跳过
+txt_age_old = 你多大了？
+txt_country_select = 选择你的国家
+txt_title_ranking = 排行榜
+
+txt_covershoot_select_cover = 很高兴认识你！选择你最喜欢的杂志封面！
+txt_covershoot_shoot = 快拍三张你的美丽身姿！
+txt_covershoot_shoot = 请拍三张照片
+txt_covershoot_select_photo = 请选一张照片
+txt_covershoot_congratulation = 漂亮的造型，你好专业啊！
+txt_prompt_info_share_photo_album_succeed = 可爱照片已经躺在您的相册啦！
+txt_prompt_info_share_photo_album_failed = 不好，存储失败了...请检查相册的设置。
+title_ter_select = 选择你的角色
+
+txt_prompt_title_info = 信息
+txt_nointernet_content = 无网络连接
+txt_prompt_button_ok = 好的
+txt_prompt_button_cancel = 取消
+txt_prompt_camera_photo = 请求相机使用权限。\n请在你的设备中进行设置→隐私→相机
+txt_prompt_album_photo = 请求照片使用权限。\n请在你的设备中进行设置→隐私→照片
+
+txt_request_title_01 = 能不能帮我们展示一下如何DIY\n{0}？求你啦……
+txt_request_title_02 = 我想要一个新的教程
+txt_request_title_03 = 对于做这件衣服有什么创意想法么？
+txt_request_title_04 = 这件衣服该如何改造？
+txt_request_title_01_category_01 = 短袖
+txt_request_title_01_category_02 = 连衣裙
+txt_request_title_01_category_03 = 短裙
+txt_request_title_01_category_04 = 短裤
+txt_request_title_01_category_05 = 长裤
+
+txt_request_gomment_good_01 = 你做的这件衣服太可爱啦！
+txt_request_gomment_good_02 = 真的好酷！
+txt_request_gomment_good_03 = 我的衣柜看起来变好了不止10倍！
+txt_request_gomment_good_04 = 我喜欢你的风格。实在太可爱了！
+txt_request_gomment_good_05 = 每当我无聊的时候，我就来看你:)
+txt_request_gomment_good_06 = 你总能做出最好的改造！！
+txt_request_gomment_good_07 = 这个不错……
+txt_request_gomment_good_08 = 非常可爱漂亮！
+txt_request_gomment_good_09 = 你很有创意！
+txt_request_gomment_good_10 = 非常喜欢你的DIY，谢谢。
+txt_request_gomment_good_11 = 完美！
+txt_request_gomment_good_12 = 就喜欢你的想法
+txt_request_gomment_good_13 = 哇奥！！！
+txt_request_gomment_good_14 = 非常鼓舞人心！
+txt_request_gomment_good_15 = 真是个人才呀
+txt_request_gomment_good_16 = 等不急要试试做这个啦！
+
+txt_request_gomment_bad_01 = 哦，不……
+txt_request_gomment_bad_02 = 嗯……呃……
+
+txt_request_reward = 奖励：至少 {0} 个赞
+
+txt_contest_select = 选择比赛主题
+txt_contest_01 = zipaibisai_cn
+txt_contest_02 = meirichuanda_cn
+txt_contest_03 = gerenzuijia_cn
+txt_contest_bouns = 比分奖励
+txt_contest_ready = 准备好了
+txt_applyfilter = 选择滤镜
+txt_addstickers = 装扮贴纸
+txt_pickthebestphoto = 选择一张照片！
+txt_uploading = 正在上传
+txt_contest_statistics = 由于票数太多，统计需要花费一定时间。结果将会在3小时后公布！届时请返回查看！
+txt_contest_VIPresult = 赛事结果已经公布！快去看看吧！
+txt_contest_vote = 为其他玩家投票
+txt_contest_voteplease = 请为其他玩家投票。
+txt_conteset_result_ready = 结果已经公布！
+txt_progressvoting = 正在为您统计票数......
+txt_conteset_result = 你的成绩
+txt_intro_character_01 = 我都没有能穿的衣服啦！

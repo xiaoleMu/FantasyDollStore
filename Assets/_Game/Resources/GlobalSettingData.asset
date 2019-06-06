@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9716b42d37ab34a639c9b8567ba056cc, type: 3}
+  m_Name: GlobalSettingData
+  m_EditorClassIdentifier: 
+  isDebugMode: 0
+  allPlatformItems:
+  - foldout: 1
+    curPlatform: 0
+    isSelected: 0
+    bundleId: com.babyeducationtoys.diyfashion
+    bundleVersion: 0.0.1
+    iconFolder: _Game/CocoPlay/GameCommon/PublishIcons/iOS
+    scriptingDefs: NO_RECEIPT_VALIDATION;NO_GPGS;NO_FLURRY
+    splitBinary: 0
+    allowOrientations: 12
+    bundleVersionCode: 1
+    keystoreName: AndroidKeyStore/tabtale.keystore
+    keystorePass: storybook
+    keyaliasName: tabtale
+    keyaliasPass: storybook
+  - foldout: 1
+    curPlatform: 1
+    isSelected: 1
+    bundleId: com.cocoplay.diy.fashion
+    bundleVersion: 0.0.1
+    iconFolder: _Game/CocoPlay/GameCommon/PublishIcons/GP
+    scriptingDefs: NO_RECEIPT_VALIDATION;NO_FLURRY
+    splitBinary: 1
+    allowOrientations: 12
+    bundleVersionCode: 1
+    keystoreName: AndroidKeyStore/tabtale.keystore
+    keystorePass: storybook
+    keyaliasName: tabtale
+    keyaliasPass: storybook
+  - foldout: 1
+    curPlatform: 2
+    isSelected: 0
+    bundleId: com.cocoplay.diyfashionamazon
+    bundleVersion: 0.0.1
+    iconFolder: _Game/CocoPlay/GameCommon/PublishIcons/AM
+    scriptingDefs: AMAZON;NO_FLURRY
+    splitBinary: 0
+    allowOrientations: 8
+    bundleVersionCode: 1
+    keystoreName: AndroidKeyStore/tabtale.keystore
+    keystorePass: storybook
+    keyaliasName: tabtale
+    keyaliasPass: storybook

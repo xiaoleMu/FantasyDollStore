@@ -1,0 +1,110 @@
+//services
+//include ':publishingsdkcore'
+//include ':configurationfetcher'
+//include ':monetization'
+//include ':banners'
+//include ':rewardedads'
+//include ':psdkcrashtool'
+//include ':psdkanalytics'
+//include ':splash'
+//include ':runtimeconfig'
+//include ':gameleveldata'
+//include ':psdkgoogleanalytics'
+//include ':socialgame'
+//include ':psdksingular'
+//include ':psdknativecampaign'
+//include ':crossdevicepersistency'
+//include ':psdkappsflyer'
+//include ':psdksingular'
+//include ':ttadaptermopubrewardedads'
+
+//providers
+
+//inter-banner
+//include ':mopubadsproviders'
+//include ':inmobiadsproviders'
+//include ':applovinadsproviders'
+//include ':ironsourceadsproviders'
+//include ':vungleadsproviders'
+
+////admob-custom-adapters
+//include ':chartboostcustomadapter'
+//include ':ironsourcecustomadapter'
+//
+////rewarded-videos
+//include ':adcolonyrvprovider'
+//include ':admobrvprovider'
+//include ':applovinrvprovider'
+//include ':mopubrvprovider'
+//include ':vunglervprovider'
+//include ':unityadsrvprovider'
+//include ':vunglewrapper'
+
+////rv custom adapters
+//include ':ttadaptermopubrewardedads'
+
+//analytics
+//include ':ttanalytics'
+//include ':deltadnaanalytics'
+//include ':ttflurryanalytics'
+
+//configs
+//include ':configs'
+
+//unity
+//include ':psdkunity'
+//include ':ttunity'
+
+
+
+/*def psdkProjectDirs = [
+        "publishingsdkcore"        : "$psdkPublishingPath/PublishingSDKCore/android",
+        "configurationfetcher"     : "$psdkPublishingPath/ConfigurationFetcher/android/ConfigurationFetcher",
+        "rewardedads"              : "$psdkPublishingPath/RewardedAds/android/RewardedAds",
+        "rewardedadstestapp"       : "$psdkPublishingPath/RewardedAds/android/RewardedAdsTestApp",
+        "monetization"             : "$psdkPublishingPath/Monetization/android/Monetization",
+        "banners"                  : "$psdkPublishingPath/Banners/android/Banners",
+        "bannerstestapp"           : "$psdkPublishingPath/Banners/android/BannersTest",
+        "inmobiadsproviders"       : "$psdkPublishingPath/Banners/android/AdsProviders/InMobiAdsProviders",
+        "applovinadsproviders"     : "$psdkPublishingPath/Banners/android/AdsProviders/AppLovinAdsProviders",
+        "mopubadsproviders"        : "$psdkPublishingPath/Banners/android/AdsProviders/mopubadsproviders",
+        "inmobicustomadaptor"      : "$psdkPublishingPath/Banners/android/CustomAdaptors/InMobiCustomAdaptor",
+        "psdkanalytics"            : "$psdkPublishingPath/Analytics/android/PSDKAnalytics",
+        "gameleveldata"            : "$psdkPublishingPath/GameLevelData/android",
+        "runtimeconfig"            : "$psdkPublishingPath/RuntimeConfig/android/RuntimeConfig",
+        "psdkgoogleanalytics"      : "$psdkPublishingPath/PSDKGoogleAnalytics/android/PSDKGoogleAnalytics",
+        "splash"                   : "$psdkPublishingPath/Splash/android/Splash",
+        "publishingtestapp"        : "$psdkPublishingPath/PublishingTestApp/android",
+        "psdkunity"                : "$psdkPublishingPath/Unity/android/Unity",
+        "ttflurryanalytics"        : "$psdkPublishingPath/Analytics/android/Agents/FlurryAnalytics",
+        "ttanalytics"              : "$psdkPublishingPath/Analytics/android/Agents/TTAnalytics",
+        "deltadnaanalytics"        : "$psdkPublishingPath/Analytics/android/Agents/DeltaDNAAnalytics",
+        "analyticstestapp"         : "$psdkPublishingPath/Analytics/android/PSDKAnalyticsTestApp",
+        "psdkexample"              : "$psdkPublishingPath/PSDKExampleApplication/android/psdkexample",
+        "psdkcrashtool"            : "$psdkPublishingPath/CrashTool/android/CrashTool",
+        "ttunity"                  : "$psdkPublishingPath/PublishingSDKCore/unity/NativeActivityWrapperAndroidProject/ttunity",
+        "chartboostcustomadapter"  : "$psdkPublishingPath/Monetization/android/CustomAdapters/Chartboost/customchartboostadapter",
+        "configs"                  : "$psdkPublishingPath/Configs/android",
+        "adcolonyrvprovider"       : "$psdkPublishingPath/RewardedAds/android/Providers/adcolonyrvprovider",
+        "admobrvprovider"          : "$psdkPublishingPath/RewardedAds/android/Providers/admobrvprovider",
+        "applovinrvprovider"       : "$psdkPublishingPath/RewardedAds/android/Providers/applovinrvprovider",
+        "mopubrvprovider"          : "$psdkPublishingPath/RewardedAds/android/Providers/mopubrvprovider",
+        "vunglervprovider"         : "$psdkPublishingPath/RewardedAds/android/Providers/vunglervprovider",
+        "vunglewrapper"            : "$psdkPublishingPath/RewardedAds/android/Providers/vunglewrapper",
+        "unityadsrvprovider"       : "$psdkPublishingPath/RewardedAds/android/Providers/unityadsrvprovider",
+        "ttadaptermopubrewardedads": "$psdkPublishingPath/RewardedAds/android/CustomEvents/ttadaptermopubrewardedads",
+        "socialgame"               : "$psdkPublishingPath/SocialGame/android/SocialGame",
+        "psdksingular"             : "$psdkPublishingPath/Singular/android/psdksingular",
+        "psdknativecampaign"       : "$psdkPublishingPath/NativeCampaign/android/psdknativecampaign",
+        "crossdevicepersistency"   : "$psdkPublishingPath/CrossDevicePersistency/android/CrossDevicePersistency",
+        "ironsourceadsproviders"   : "$psdkPublishingPath/Monetization/android/AdsProviders/IronSourceAdsProviders",
+        "ironsourcecustomadapter"  : "$psdkPublishingPath/Monetization/android/CustomAdapters/IronSource/ironsourcecustomadapter",
+        "vungleadsproviders"       : "$psdkPublishingPath/Monetization/android/AdsProviders/VungleAdsProviders",
+        "psdkappsflyer"            : "$psdkPublishingPath/AppsFlyer/android/PSDKAppsFlyer"
+]
+
+for (pd in psdkProjectDirs) {
+    if (settings.findProject(":${pd.key}")) {
+        project(":${pd.key}").projectDir = file("${pd.value}")
+    }
+}*/

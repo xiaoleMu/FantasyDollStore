@@ -1,0 +1,157 @@
+No. = EN
+txt_logo = DIY Fashion Star
+texture_logo = logo_en
+texture_intro = intro_en
+txture_loading_info_loading = Loading...
+texture_privacy_policy = privacy_policy_en
+texture_terms_user = Terms of Use
+txt_privacy_policy = Privacy Policy
+txt_terms_user = Terms of Use
+txt_introduction = Intro
+txt_more_game = More Apps
+
+
+
+txt_store_title = STORE
+txt_mini_store_title = MINI STORE
+txt_store_buy = GET NOW
+txt_store_bigsale = SALE
+txt_specialoffer_fullversition = ALL SCENES
+txt_store_discount = ALL ITEMS
+txt_store_product_unlocked = UNLOCKED
+txt_store_product_title_01 = FULL GAME!
+txt_store_product_title_01_img = store_full_version_en
+txt_store_product_title_01_content = GET EVERYTHING & NO ADS
+texture_store_fullversion = fullversion_en
+txt_store_product_title_02 = PARTY PASS
+txt_store_product_title_03 = COVER SHOOT
+txt_store_product_title_04 = HAIR SALON
+txt_store_product_title_05 = ALL ITEMS
+txt_store_product_title_06 = DRESS DIY
+txt_store_product_title_07 = NO ADS
+txt_store_btn_restore = Restore  
+texture_store_restore = restore_en
+txt_store_remove_ads = REMOVE ADS
+txt_store_no_ads = ADS REMOVED
+txt_store_off = 50% off
+txt_video_free = FREE
+txt_store_sall = SELL
+
+txt_app_rate_title = Enjoying DIY Fashion Star?
+txt_app_rate_rateus = Rate this game so we can keep more updates coming!
+txt_app_rate_not_ask_empty = rateus_point_en
+txt_app_rate_not_ask_full = Don't ask me again
+txt_app_rate_now = RATE NOW
+txt_app_rate_later = LATER
+
+txt_rank_title = Ranking
+txt_rank_rank = RANK
+txt_rank_fans = Likes
+txt_rank_top_video = TOP VIDEO
+txt_rank_player = DIYer
+txt_rank_new = NEW
+
+txt_map_video_title = My DIY Clip
+txt_map_video_views = {0} Views
+txt_map_video_post = POST
+txt_map_video_name = My DIY Fashion EP. {0}
+txt_map_video_Empty = Empty
+sprite_banner_title = video/ui/banner_title
+sprite_web_video_txt = video/ui/web_video_txt
+
+txt_vote_do_better = title_txt_en
+txt_vote_buy = GET NOW
+txt_dance_savevideo = VIDEO IS SAVED
+
+txt_notification_hello_weekly_1 = There are so many BLAH items that are waiting to be turned into high-fashion pieces! Come back!
+txt_notification_hello_weekly_2 = Your followers need inspiration! Come do your DIY magic!
+txt_notification_hello_weekly_3 = Time to prove you're the Queen of Selfies. Come win the selfie contest!
+txt_notification_hello_weekly_4 = Let's get creative and come up with new DIY hacks! 
+txt_notification_hello_weekly_5 = Your fans miss you. Come show off your awesome DIY skills!
+
+txt_character_scelect = CHOOSE YOUR CHARACTER
+
+
+txt_permission_open_settings = Settings
+txt_permission_rationale_save_to_gallery = We want to save your fab photo to your gallery!
+txt_permission_rationale_pick_from_gallery = We want to pick a nice photo from your gallery!
+txt_permission_rationale_use_camera = We want to use your camera to take a photo!
+
+txt_needstar_title = You need more stars to ski again. Earn them by completing other scenes.
+txt_profile_rank = Rank
+txt_profile = PROFILE
+txt_profile_name = YOUR NAME
+
+txt_profile_skills = Skills
+
+txt_age_skip = Skip
+txt_age_old = HOW OLD ARE YOU?
+txt_country_select = SELECT YOUR COUNTRY
+txt_title_ranking = RANKING
+
+txt_covershoot_select_cover = Hey there! Let’s choose your favorite magazine!
+txt_covershoot_shoot = Snap 3 photos of your fabulous style!
+txt_covershoot_shoot = SNAP 3 PICS
+txt_covershoot_select_photo = SELECT THE BEST SHOOT
+txt_covershoot_congratulation = Nice pose! You're a pro!
+txt_prompt_info_share_photo_album_succeed = Cool! Photo saved successfully!
+txt_prompt_info_share_photo_album_failed = Oops... Photo saving failed! Please check "Photos" settings.
+title_ter_select = CHOOSE YOUR CHARACTER
+
+txt_prompt_title_info = MESSAGE
+txt_nointernet_content = No Internet Connection
+txt_prompt_button_ok = OK
+txt_prompt_button_cancel = Cancel
+txt_prompt_camera_photo = Allows the use of your camera. Go to your device Setting> Privacy> Camera
+txt_prompt_album_photo = Allows the use of your photos. Go to your device Setting> Privacy> Photos
+
+txt_request_title_01 = Can you show us how to make a DIY {0}? Pretty pleaaaaaase...
+txt_request_title_02 = I want a new tutorial :)
+txt_request_title_03 = Any idea how to do this DIY?
+txt_request_title_04 = How about a new DIY hack?
+txt_request_title_01_category_01 = shirt
+txt_request_title_01_category_02 = dress
+txt_request_title_01_category_03 = skirt
+txt_request_title_01_category_04 = shorts
+txt_request_title_01_category_05 = pants
+
+txt_request_gomment_good_01 = Your clothes are so cute! 
+txt_request_gomment_good_02 = This was so cool! 
+txt_request_gomment_good_03 = My wardrobe looks 10 times better already!
+txt_request_gomment_good_04 = I like your style. Soooooo cute!
+txt_request_gomment_good_05 = Whenever I'm bored I watch you :)
+txt_request_gomment_good_06 = You always have the best hacks!!
+txt_request_gomment_good_07 = Nice one...
+txt_request_gomment_good_08 = So cute and beautiful
+txt_request_gomment_good_09 = You're so creative!
+txt_request_gomment_good_10 = Love ur DIYs. Thx for sharing them!
+txt_request_gomment_good_11 = Perfect!
+txt_request_gomment_good_12 = I just love your ideas
+txt_request_gomment_good_13 = WOW!!
+txt_request_gomment_good_14 = Very inspiring!
+txt_request_gomment_good_15 = TALENT ON POINT
+txt_request_gomment_good_16 = Can’t wait to TRY and make this!
+
+txt_request_gomment_bad_01 = No...
+txt_request_gomment_bad_02 = Mmm...
+
+txt_request_reward = Reward: {0} likes or more!
+
+txt_contest_select = SELECT CONTEST THEME
+txt_contest_01 = zipaibisai_en
+txt_contest_02 = meirichuanda_en
+txt_contest_03 = gerenzuijia_en
+txt_contest_bouns = Bonus
+txt_contest_ready = I'm ready
+txt_applyfilter = Apply filter
+txt_addstickers = Add stickers
+txt_pickthebestphoto = Pick the best photo!
+txt_uploading = Uploading
+txt_contest_statistics = We've got so many votes! Results will be ready in 3 hours! Come back then!
+txt_contest_VIPresult = Your event results are finally in. Let's check 'em out!
+txt_contest_vote = Vote for others
+txt_contest_voteplease = Please vote for others.
+txt_conteset_result_ready = Results are ready!
+txt_progressvoting = Voting is in progress ...
+txt_conteset_result = Your Score
+txt_intro_character_01 = I don't have anything to wear!
