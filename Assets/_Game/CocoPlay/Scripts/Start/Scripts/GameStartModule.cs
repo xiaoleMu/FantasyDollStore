@@ -23,12 +23,12 @@ namespace Game
 
 			Bind<GameRoleStateModel> ();
 
+			Bind<GameRecordStateModel> ();
+			BindType<ICocoAudioData, GameAudioData> ();
+
 			GameGlobalData globalData = new GameGlobalData ();
 			BindValue<CocoGlobalData> (globalData);
 			BindValue (globalData);
-
-			Bind<GameRecordStateModel> ();
-			BindType<ICocoAudioData, GameAudioData> ();
 		}
 
 		protected override void CleanDatas ()
@@ -46,16 +46,19 @@ namespace Game
 		protected override void InitSceneModuleDatas ()
 		{
 			AddSceneModuleData (new CocoSceneModuleData (CocoSceneID.CoverPage, "CoverPage"));
-
+			AddSceneModuleData (new CocoSceneModuleData (CocoSceneID.Doll, "Doll", typeof(GameDollSceneModule)));
 		}
 
 		protected override void InitSubModules ()
 		{
 			base.InitSubModules ();
+
+			CocoMainController.Instance.AddModule<CocoAssetModule> ();
 		}
 
 		protected override void CleanSubModules ()
 		{
+			CocoMainController.Instance.RemoveModule<CocoAssetModule> ();
 
 			base.CleanSubModules ();
 		}
@@ -72,6 +75,8 @@ namespace Game
 
 		private void InitAssetConfig ()
 		{
+			var loadSignal = CocoRoot.GetInstance<CocoAssetLoadConfigHolderSignal> ();
+			loadSignal.Dispatch (string.Empty);
 		}
 
 		private void InitRole ()

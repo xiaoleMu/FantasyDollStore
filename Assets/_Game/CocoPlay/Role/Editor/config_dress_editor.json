@@ -1,0 +1,81 @@
+
+{
+    "originRootDirectory" : "_Game/CocoPlay/Role/Resources",
+    "assetDirectory"      : "role",
+    "configDirectory"     : "asset_config",
+    "globalConfigFileName" : "config_asset_global.json",
+    "prettyPrint"          : false,
+    "randomSorting"        : true,
+    "useAssetBundle"       : false,
+    "dressCategoryCoverLayerIds" : {
+        "arm" : "Arm",
+        "body" : "Body",
+        "ear"  : "Ear",
+        "eye"  : "Eye",
+        "head" : "Head",
+        "leg"  : "Leg",
+        "nose" : "Nose",
+        "tail" : "Tail"
+    },
+    "dressItemPrefixCoverLayerIds" : {
+    },
+    "dressMainCategoryIds"         : [
+        "arm",
+        "body",
+        "ear",
+        "eye",
+        "head",
+        "leg",
+        "nose",
+        "tail"
+    ],
+    "roleDressConfigHolders"       : [
+        {
+            "dressId" : "coco",
+            "sceneConfigHolders" : [
+                {
+                    "sceneId" : "common",
+                    "itemIdPrefixs" : [
+                        "arm_001",
+                        "body_001",
+                        "head_001",
+                        "leg_001"
+                    ]
+                }
+            ],
+            "resetRandomSeed"    : true
+        }
+    ],
+    "roleBodyConfigHolders"        : [
+        {
+            "bodyId" : "common",
+            "boneNames" : {
+                "Root" : "Bip001",
+                "Head" : "Bip001 Head",
+                "Body" : "Bip001 Spine"
+            },
+            "rendererNames" : {
+                "Head" : "head",
+                "Body" : "body",
+                "Eyelash" : "eyelash",
+                "EyeBall" : "eyeball",
+                "EyeBrow" : "eyebrow"
+            }
+        }
+    ],
+    "roleConfigHolders"            : [
+        {
+            "roleId" : "coco",
+            "boneItemId" : "player",
+            "basicItemIds" : [
+                "arm_001",
+                "body_001",
+                "head_001",
+                "leg_001"
+            ],
+            "dressId"      : "coco",
+            "bodyId"       : "common",
+            "enableShadow" : true
+        }
+    ]
+}

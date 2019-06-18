@@ -198,9 +198,7 @@ namespace Game
 		{
 			m_SceneBgMusics = new Dictionary<CocoSceneID, CocoAudioID[]> {
 				{ CocoSceneID.None, new[] { CocoAudioID.Bgm_Common } },
-				{ CocoSceneID.Map, new[] { CocoAudioID.Bgm_Map } },
-				{ CocoSceneID.Contest, new[] { CocoAudioID.Bgm_Contest } },
-				{ CocoSceneID.DIY, new[] { CocoAudioID.Bgm_DIY } }
+				{ CocoSceneID.Map, new[] { CocoAudioID.Bgm_Map } }
 			};
 		}
 
