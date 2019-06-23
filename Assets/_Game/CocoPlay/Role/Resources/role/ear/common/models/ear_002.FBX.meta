@@ -55,6 +55,11 @@ ModelImporter:
     100098: Bone019
     100100: //RootNode
     100102: ear_002
+    100104: Bip001 HeadNub
+    100106: Bip001 L Finger0Nub
+    100108: Bip001 L Toe0Nub
+    100110: Bip001 R Finger0Nub
+    100112: Bip001 R Toe0Nub
     400000: Bip001
     400002: Bip001 Head
     400004: Bip001 L Calf
@@ -107,6 +112,11 @@ ModelImporter:
     400098: Bone019
     400100: ear_002
     400102: //RootNode
+    400104: Bip001 HeadNub
+    400106: Bip001 L Finger0Nub
+    400108: Bip001 L Toe0Nub
+    400110: Bip001 R Finger0Nub
+    400112: Bip001 R Toe0Nub
     2100000: 'Material #280'
     2100002: 'Material #281'
     4300000: ear_002
