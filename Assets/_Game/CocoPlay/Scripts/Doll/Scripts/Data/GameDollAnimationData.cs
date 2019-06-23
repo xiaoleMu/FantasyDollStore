@@ -21,7 +21,6 @@ namespace Game{
 			m_PoseData = new List<CCAnimationData>() {
 				CocoRoot.GetInstance <GameDollData>().CA_Dressup_Pose1,
 				CocoRoot.GetInstance <GameDollData>().CA_Dressup_Pose2,
-				CocoRoot.GetInstance <GameDollData>().CA_Dressup_Pose3,
 			};
 		}
 

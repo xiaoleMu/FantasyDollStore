@@ -113,12 +113,12 @@ namespace Game
 
 		void PlayEffect (string id)
 		{
-			CocoDressItemModelSet dressItemModel = roleControl.CurRole.Dress.GetDressItem (id);
-			dressItemModel.ItemRenderers.ForEach (smr => {
-				CocoSkinnedMeshEffect.Create (smr);
-			});
+//			CocoDressItemModelSet dressItemModel = roleControl.CurRole.Dress.GetDressItem (id);
+//			dressItemModel.ItemRenderers.ForEach (smr => {
+//				CocoSkinnedMeshEffect.Create (smr);
+//			});
 //			CocoAudio.PlaySound(CocoAudioID.Button_Click_15);
-			int gold = 0;
+//			int gold = 0;
 		}
 
 		void ProcessScore ()

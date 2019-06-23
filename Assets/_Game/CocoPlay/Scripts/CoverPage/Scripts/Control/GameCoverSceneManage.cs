@@ -10,6 +10,12 @@ namespace Game
     public class GameCoverSceneManage : GameGenericSceneBase
     {
        
-       
+		protected override void OnButtonClickWithButtonName (CocoUINormalButton button, string pButtonName)
+		{
+			base.OnButtonClickWithButtonName (button, pButtonName);
+			if (pButtonName == "btnCoverPageStart"){
+				CocoMainController.EnterScene (CocoSceneID.Doll);
+			}
+		}
     }
 }

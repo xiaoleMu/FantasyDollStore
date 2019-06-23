@@ -67,7 +67,7 @@ namespace Game
             tRoleEntity.transform.localPosition = Vector3.zero;
             tRoleEntity.transform.localEulerAngles = Vector3.zero;
 
-            tRoleEntity.Shadow.EnableFollowFreezeY(0.002f);
+//            tRoleEntity.Shadow.EnableFollowFreezeY(0.002f);
 
             if (isCreateNewCharacter)
             {

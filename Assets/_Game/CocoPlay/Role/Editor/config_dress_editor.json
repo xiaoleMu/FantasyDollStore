@@ -33,15 +33,6 @@
         {
             "dressId" : "coco",
             "sceneConfigHolders" : [
-                {
-                    "sceneId" : "common",
-                    "itemIdPrefixs" : [
-                        "arm_001",
-                        "body_001",
-                        "head_001",
-                        "leg_001"
-                    ]
-                }
             ],
             "resetRandomSeed"    : true
         }
@@ -75,7 +66,7 @@
             ],
             "dressId"      : "coco",
             "bodyId"       : "common",
-            "enableShadow" : true
+            "enableShadow" : false
         }
     ]
 }

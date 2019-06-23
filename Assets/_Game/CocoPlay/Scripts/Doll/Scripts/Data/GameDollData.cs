@@ -9,79 +9,79 @@ namespace Game
 	public class GameDollData
 	{
 
-        public CCAnimationData CA_Dressup_Standby = new CCAnimationData("com_standby");
-		public CCAnimationData CA_Dressup_Pose1 = new CCAnimationData("du_pose01","voice/player@du_pose01");
-		public CCAnimationData CA_Dressup_Pose2 = new CCAnimationData("du_pose02","voice/player@du_pose02");
-		public CCAnimationData CA_Dressup_Pose3 = new CCAnimationData("du_pose03","voice/player@du_pose03");
-		public CCAnimationData CA_Dressup_top = new CCAnimationData("du_top","voice/player@du_top");
-		public CCAnimationData CA_Dressup_buttom = new CCAnimationData("du_buttom","voice/player@du_bottom");
+		public CCAnimationData CA_Dressup_Standby = new CCAnimationData("standby01");
+		public CCAnimationData CA_Dressup_Pose1 = new CCAnimationData("standby02");
+		public CCAnimationData CA_Dressup_Pose2 = new CCAnimationData("standby03");
+		public CCAnimationData CA_Dressup_ear = new CCAnimationData("du_ear");
+		public CCAnimationData CA_Dressup_body = new CCAnimationData("du_body");
+		public CCAnimationData CA_Dressup_sit = new CCAnimationData("sit");
+		public CCAnimationData CA_Dressup_win01 = new CCAnimationData("win01");
+		public CCAnimationData CA_Dressup_win02 = new CCAnimationData("win02");
 
 
 		List <CocoDressupCategoryData> m_CategoryList;
 
 		public GameDollData (){
-//			InitDollData ();
+			InitDollData ();
 		}
 
 		private void InitDollData (){
 			m_CategoryList = new List<CocoDressupCategoryData> ();
 
 			CocoDressupCategoryData categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "dress";
-            categoryData.m_IconNormalPath = "Sprite/Category/ico_dress_normal";
-            categoryData.m_IconSelectedPath = "Sprite/Category/ico_dress_focus";
+			categoryData.CategoryID = "ear";
+			categoryData.m_IconNormalPath = "Sprite/Category/Ears";
+			categoryData.m_IconSelectedPath = "Sprite/Category/Ears_xz";
 			categoryData.m_BGNormalPath = "Category/btn_normal";
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-            categoryData.m_Animation = CA_Dressup_top;
+			categoryData.m_Animation = CA_Dressup_ear;
 			m_CategoryList.Add (categoryData);
 
 			categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "bottom";
-            categoryData.m_IconNormalPath = "Sprite/Category/ico_shortskirt_normal";
-            categoryData.m_IconSelectedPath = "Sprite/Category/ico_shortskirt_focus";
+			categoryData.CategoryID = "eye";
+			categoryData.m_IconNormalPath = "Sprite/Category/eyes";
+			categoryData.m_IconSelectedPath = "Sprite/Category/eyes_xz";
 			categoryData.m_BGNormalPath = "Category/btn_normal";
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-            categoryData.m_Animation = CA_Dressup_buttom;
-			categoryData.m_LockType = CocoLockType.RV;
+//            categoryData.m_Animation = CA_Dressup_buttom;
 			m_CategoryList.Add (categoryData);
 
 
 			categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "sock";
-            categoryData.m_IconNormalPath = "Sprite/Category/ico_socks_normal";
-            categoryData.m_IconSelectedPath = "Sprite/Category/ico_socks_focus";
+			categoryData.CategoryID = "body";
+			categoryData.m_IconNormalPath = "Sprite/Category/pattern";
+			categoryData.m_IconSelectedPath = "Sprite/Category/pattern_xz";
 			categoryData.m_BGNormalPath = "Category/btn_normal";
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-            categoryData.m_Animation = CA_Dressup_buttom;
+//            categoryData.m_Animation = CA_Dressup_buttom;
 			m_CategoryList.Add (categoryData);
 
 			categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "top";
-            categoryData.m_IconNormalPath = "Sprite/Category/ico_jacket_normal";
-            categoryData.m_IconSelectedPath = "Sprite/Category/ico_jacket_focus";
+			categoryData.CategoryID = "head";
+			categoryData.m_IconNormalPath = "Sprite/Category/mouth";
+			categoryData.m_IconSelectedPath = "Sprite/Category/mouth";
 			categoryData.m_BGNormalPath = "Category/btn_normal";
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-            categoryData.m_Animation = CA_Dressup_top;
+//            categoryData.m_Animation = CA_Dressup_top;
 			m_CategoryList.Add (categoryData);
 
 			categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "accessories";
-            categoryData.m_IconNormalPath = "Sprite/Category/ico_acc_normal";
-            categoryData.m_IconSelectedPath = "Sprite/Category/ico_acc_focus";
+			categoryData.CategoryID = "tail";
+			categoryData.m_IconNormalPath = "Sprite/Category/tails";
+			categoryData.m_IconSelectedPath = "Sprite/Category/tails_xz";
 			categoryData.m_BGNormalPath = "Category/btn_normal";
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-            categoryData.m_Animation = CA_Dressup_top;
-			categoryData.m_LockType = CocoLockType.RV;
+//            categoryData.m_Animation = CA_Dressup_top;
 			m_CategoryList.Add (categoryData);
 
 

@@ -41,14 +41,14 @@ namespace Game
 
 		public void Init ()
 		{
-//			InitCategories ();
+			InitCategories ();
 		}
 
 		void InitCategories ()
 		{
-			CocoRoleDressSceneHolder tSceneHolder = roleControl.CurRole.Dress.GetDressSceneHolder ("Doll");
+			CocoRoleDressSceneHolder tSceneHolder = roleControl.CurRole.Dress.GetDressSceneHolder ("common");
 			m_CategoryItemDic = tSceneHolder.CategoryItemHolderDic;
-			string[] categoryList = GetCategoryList("Doll");
+			string[] categoryList = GetCategoryList("common");
 			GameDollCategoryButton FirstButton = null;
 
 			for (int i = 0; i < categoryList.Length; i++) {
@@ -68,11 +68,11 @@ namespace Game
 		{
 
 			List<string> categoryList = new List<string> ();
-			categoryList.Add ("dress");
-            categoryList.Add ("bottom");
-			categoryList.Add ("sock");
-			categoryList.Add ("accessories");
-            categoryList.Add ("top");
+			categoryList.Add ("body");
+			categoryList.Add ("head");
+			categoryList.Add ("tail");
+			categoryList.Add ("eye");
+			categoryList.Add ("ear");
 			return categoryList.ToArray<string> ();
 
 		}
