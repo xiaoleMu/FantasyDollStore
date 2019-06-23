@@ -4,113 +4,11 @@ using CocoPlay;
 using Game;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class RoleSelectedPopup : CocoGenericPopupBase
 {
-    [Inject]
-    public CocoRoleControl roleControl { get; set; }
-
-    [Inject]
-    public GameGlobalData gameGlobalData { get; set; }
-
-    [Inject]
-    public GameRecordStateModel recordStateModel { get; set; }
-
-    [Inject]
-    public GameRoleStateModel roleStateModel { get; set; }
-
-    [SerializeField] private GameObject[] selectSprites;
-
-    [SerializeField] private Image[] buttonSelectImage;
-
-    [SerializeField] private Sprite unSelectSprite;
-
-    [SerializeField] private Sprite SelectSprite;
-
-    [SerializeField] private GameObject[] parObj;
     [SerializeField] private RawImage m_RawImage;
-
-    private int m_SelectIndex = -1;
-
-
-    private bool m_IsSelect = false;
-
-    public GameObject closeBtn;
-
-    protected override void OnButtonClickWithButtonName(string buttonName)
-    {
-        base.OnButtonClickWithButtonName(buttonName);
-//        if (m_IsSelect)
-//            return;
-//        m_IsSelect = true;
-//        if (m_SelectIndex != -1)
-//        {
-//            selectSprites[m_SelectIndex].SetActive(false);
-//            buttonSelectImage[m_SelectIndex].sprite = unSelectSprite;
-//        }
-//
-//        GameRoleID tempId = GameRoleID.Ava;
-//
-//        switch (buttonName)
-//        {
-//            case "character1":
-//                m_SelectIndex = 0;
-//                roleStateModel.curRoleId = GameRoleID.Ava.ToString();
-//                tempId = GameRoleID.Ava;
-//                break;
-//            case "character2":
-//                m_SelectIndex = 1;
-//                roleStateModel.curRoleId = GameRoleID.Mary.ToString();
-//                tempId = GameRoleID.Mary;
-//                break;
-//            case "character3":
-//                m_SelectIndex = 2;
-//                roleStateModel.curRoleId = GameRoleID.Judi.ToString();
-//                tempId = GameRoleID.Judi;
-//                break;
-//            case "character4":
-//                m_SelectIndex = 3;
-//                roleStateModel.curRoleId = GameRoleID.Cate.ToString();
-//                tempId = GameRoleID.Cate;
-//                break;
-//        }
-//
-//        roleStateModel.selectRoleDB.eyeball = gameGlobalData.roleBasicInfos(tempId).eyeball;
-//        roleStateModel.selectRoleDB.eyebrow = gameGlobalData.roleBasicInfos(tempId).eyebrow;
-//        roleStateModel.selectRoleDB.skincolor = gameGlobalData.roleBasicInfos(tempId).skincolor;
-//        roleStateModel.selectRoleDB.facesize = gameGlobalData.roleBasicInfos(tempId).facesize;
-//        roleStateModel.selectRoleDB.eyesize = gameGlobalData.roleBasicInfos(tempId).eyesize;
-//        roleStateModel.selectRoleDB.nosesie = gameGlobalData.roleBasicInfos(tempId).nosesie;
-//        roleStateModel.selectRoleDB.mouthsize = gameGlobalData.roleBasicInfos(tempId).mouthsize;
-//		roleStateModel.selectRoleDB.hairColorIndex = gameGlobalData.roleBasicInfos(tempId).hairColorIndex;
-//
-//        parObj[m_SelectIndex].SetActive(true);
-//        selectSprites[m_SelectIndex].SetActive(true);
-//        buttonSelectImage[m_SelectIndex].sprite = SelectSprite;
-//
-//        if (gameGlobalData.AllSelectCharacters != null)
-//        {
-//            var caDressupPose3 = new CCAnimationData("du_pose03","voice/player@du_pose03");
-//            gameGlobalData.AllSelectCharacters[m_SelectIndex].Animation.Play(caDressupPose3);
-//        }
-//
-//        StartCoroutine(SelectRole());
-//        if (!gameGlobalData.FirstTimeFlowFinished)
-//            CocoFlurry.LogEvent("FirstTimeFlow_2_Character_Selected", "Character", tempId.ToString());
-    }
-
-    private IEnumerator SelectRole()
-    {
-        yield return new WaitForSeconds(3f);
-        CloseBtnClick();
-    }
-
-    protected override void CloseBtnClick()
-    {
-        if (m_SelectIndex != -1)
-            parObj[m_SelectIndex].SetActive(false);
-        base.CloseBtnClick();
-    }
 
 
     private Transform m_ParentTrans;
@@ -119,6 +17,8 @@ public class RoleSelectedPopup : CocoGenericPopupBase
 
     protected override void ShowPopup()
     {
+		InitRoleBtns ();
+
         m_ScaleParent.transform.localScale = Vector3.zero;
 
         if (m_ParentTrans == null)
@@ -152,6 +52,70 @@ public class RoleSelectedPopup : CocoGenericPopupBase
 
 
         Camera.main.targetTexture = null;
+
+		m_VBtn.OnClickEvent -= OnPopupCloseEvent;
+		m_CloseBtn.OnClickEvent -= OnPopupCloseEvent;
+		for (int i=0; i<m_RoleBtns.Length; i++){
+			m_RoleBtns[i].OnClickEvent -= OnRoleClick;
+		}
+
+		if (OnCloseDollSelect != null)
+			OnCloseDollSelect (m_ChangeDoll);
     }
 		
+
+	#region Btn
+
+	public Action<bool> OnCloseDollSelect;
+
+	[Inject]
+	public GameDollData dollData {get; set;}
+
+	[SerializeField]
+	RoleClickButton[] m_RoleBtns;
+	[SerializeField]
+	CocoUINormalButton m_VBtn;
+	[SerializeField]
+	CocoUINormalButton m_CloseBtn;
+
+	private RoleClickButton m_CurRoleBtn = null;
+
+	private void InitRoleBtns (){
+		m_VBtn.OnClickEvent += OnPopupCloseEvent;
+		m_CloseBtn.OnClickEvent += OnPopupCloseEvent;
+		for (int i=0; i<m_RoleBtns.Length; i++){
+			if (dollData.curSelectRole == i){
+				m_RoleBtns[i].ChangeStatus (true);
+				m_CurRoleBtn = m_RoleBtns[i];
+			}
+			else {
+				m_RoleBtns[i].ChangeStatus (false);
+			}
+
+			m_RoleBtns[i].OnClickEvent += OnRoleClick;
+		}
+	}
+
+	private void OnRoleClick (CocoUINormalButton btn){
+		RoleClickButton t_Btn = (RoleClickButton)btn;
+		if (m_CurRoleBtn != null){
+			m_CurRoleBtn.ChangeStatus (false);
+		}
+
+		dollData.curSelectRole = t_Btn.Index;
+		t_Btn.ChangeStatus (true);
+		m_CurRoleBtn = t_Btn;
+	}
+
+	bool m_ChangeDoll = false;
+	private void OnPopupCloseEvent (CocoUINormalButton btn){
+		if (btn == m_VBtn){
+			m_ChangeDoll = true;
+		}
+		else {
+			m_ChangeDoll = false;
+		}
+	}
+
+	#endregion
 }

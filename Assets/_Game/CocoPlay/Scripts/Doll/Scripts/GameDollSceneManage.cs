@@ -112,6 +112,8 @@ namespace Game
 
 		private SceneStep m_CurSceneStep = SceneStep.Step_Common;
 
+		private RoleSelectedPopup m_RoleSelectPopup;
+
 		protected override void OnButtonClickWithButtonName (CocoUINormalButton button, string pButtonName)
 		{
 			base.OnButtonClickWithButtonName (button, pButtonName);
@@ -140,6 +142,16 @@ namespace Game
 			}
 			else if (pButtonName == "doll"){
 				CocoMainController.ShowPopup ("RoleSelectedPopup");
+				m_RoleSelectPopup = FindObjectOfType<RoleSelectedPopup>();
+				if (m_RoleSelectPopup != null){
+					m_RoleSelectPopup.OnCloseDollSelect += OnChangeDoll;
+				}
+			}
+		}
+
+		private void OnChangeDoll (bool change){
+			if (change){
+				m_CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[dressupData.curSelectRole]);
 			}
 		}
 
@@ -400,7 +412,7 @@ namespace Game
 		private void RecordDoll (){
 			List<string> doll = m_CurRole.Dress.GetAllDressIds ();
 
-			recordStateModel.AddRecordDoll (doll);
+			recordStateModel.AddRecordDoll (doll, dressupData.curSelectRole);
 		}
 
 		#endregion

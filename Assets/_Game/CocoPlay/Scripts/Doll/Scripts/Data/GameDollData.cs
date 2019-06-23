@@ -21,6 +21,8 @@ namespace Game
 
 		List <CocoDressupCategoryData> m_CategoryList;
 
+		public int curSelectRole = -1;
+
 		public GameDollData (){
 			InitDollData ();
 		}

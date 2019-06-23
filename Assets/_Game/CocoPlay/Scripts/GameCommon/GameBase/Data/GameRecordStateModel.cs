@@ -15,9 +15,14 @@ namespace Game
 			}
 		}
 
-		public void AddRecordDoll (List <string> recordDoll){
-			if (_data.recordDolls.Count >= 8) _data.recordDolls.RemoveAt (0);
-			_data.recordDolls.Add (recordDoll);
+		public void AddRecordDoll (List <string> recordDoll, int index = -1){
+			if (index >= 0){
+				_data.recordDolls[index] = recordDoll;
+			}
+			else {
+				if (_data.recordDolls.Count >= 8) _data.recordDolls.RemoveAt (0);
+				_data.recordDolls.Add (recordDoll);
+			}
 			Save ();
 		}
 	}
