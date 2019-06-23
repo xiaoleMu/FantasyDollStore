@@ -119,6 +119,7 @@ namespace Game
 			base.OnButtonClickWithButtonName (button, pButtonName);
 
 			if (pButtonName == "next"){
+				button.gameObject.SetActive (false);
 				StartCoroutine (PlayAni ());
 //				switch (m_CurSceneStep){
 //				case SceneStep.Step_Common:
@@ -151,7 +152,7 @@ namespace Game
 
 		private void OnChangeDoll (bool change){
 			if (change){
-				m_CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[dressupData.curSelectRole]);
+				m_CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[GlobalData.curSelectRole]);
 			}
 		}
 
@@ -379,6 +380,8 @@ namespace Game
 
 			yield return StartCoroutine (m_CurRole.Animation.StartPlay (dressupData.CA_Dressup_win01));
 			yield return StartCoroutine (m_CurRole.Animation.StartPlay (dressupData.CA_Dressup_win02));
+
+			CocoMainController.EnterScene (CocoSceneID.Map);
 		}
 
 		#endregion
@@ -412,7 +415,7 @@ namespace Game
 		private void RecordDoll (){
 			List<string> doll = m_CurRole.Dress.GetAllDressIds ();
 
-			recordStateModel.AddRecordDoll (doll, dressupData.curSelectRole);
+			recordStateModel.AddRecordDoll (doll, GlobalData.curSelectRole);
 		}
 
 		#endregion

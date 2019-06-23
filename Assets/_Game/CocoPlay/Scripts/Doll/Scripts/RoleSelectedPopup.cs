@@ -69,7 +69,7 @@ public class RoleSelectedPopup : CocoGenericPopupBase
 	public Action<bool> OnCloseDollSelect;
 
 	[Inject]
-	public GameDollData dollData {get; set;}
+	public GameGlobalData GlobalData {get; set;}
 
 	[SerializeField]
 	RoleClickButton[] m_RoleBtns;
@@ -84,7 +84,7 @@ public class RoleSelectedPopup : CocoGenericPopupBase
 		m_VBtn.OnClickEvent += OnPopupCloseEvent;
 		m_CloseBtn.OnClickEvent += OnPopupCloseEvent;
 		for (int i=0; i<m_RoleBtns.Length; i++){
-			if (dollData.curSelectRole == i){
+			if (GlobalData.curSelectRole == i){
 				m_RoleBtns[i].ChangeStatus (true);
 				m_CurRoleBtn = m_RoleBtns[i];
 			}
@@ -102,7 +102,7 @@ public class RoleSelectedPopup : CocoGenericPopupBase
 			m_CurRoleBtn.ChangeStatus (false);
 		}
 
-		dollData.curSelectRole = t_Btn.Index;
+		GlobalData.curSelectRole = t_Btn.Index;
 		t_Btn.ChangeStatus (true);
 		m_CurRoleBtn = t_Btn;
 	}

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Doll.unity
     guid: 51d7ac41e5ad546c9b36e2e8628bc66a
+  - enabled: 1
+    path: Assets/_Game/Scenes/Map.unity
+    guid: 4d5e353935ee54d4c8d2f09090204f17
   m_configObjects: {}

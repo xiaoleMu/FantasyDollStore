@@ -2,12 +2,6 @@
 {
     "categoryConfigHolders" : [
         {
-            "assetPath" : "asset_config/config_dress_category_arm.json",
-            "coverLayerId" : "",
-            "id"           : "config_dress_category_arm",
-            "order"        : -1
-        },
-        {
             "assetPath" : "asset_config/config_dress_category_basic.json",
             "coverLayerId" : "",
             "id"           : "config_dress_category_basic",
@@ -32,18 +26,6 @@
             "order"        : -1
         },
         {
-            "assetPath" : "asset_config/config_dress_category_head.json",
-            "coverLayerId" : "",
-            "id"           : "config_dress_category_head",
-            "order"        : -1
-        },
-        {
-            "assetPath" : "asset_config/config_dress_category_leg.json",
-            "coverLayerId" : "",
-            "id"           : "config_dress_category_leg",
-            "order"        : -1
-        },
-        {
             "assetPath" : "asset_config/config_dress_category_nose.json",
             "coverLayerId" : "",
             "id"           : "config_dress_category_nose",
@@ -58,15 +40,15 @@
     ],
     "sceneConfigHolders"    : [
         {
-            "assetPath" : "asset_config/config_dress_scene_common.json",
-            "coverLayerId" : "",
-            "id"           : "config_dress_scene_common",
-            "order"        : -1
-        },
-        {
             "assetPath" : "asset_config/config_dress_scene_basic.json",
             "coverLayerId" : "",
             "id"           : "config_dress_scene_basic",
+            "order"        : -1
+        },
+        {
+            "assetPath" : "asset_config/config_dress_scene_common.json",
+            "coverLayerId" : "",
+            "id"           : "config_dress_scene_common",
             "order"        : -1
         }
     ],

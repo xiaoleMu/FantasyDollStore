@@ -21,7 +21,7 @@ namespace Game
 
 		List <CocoDressupCategoryData> m_CategoryList;
 
-		public int curSelectRole = -1;
+//		public int curSelectRole = -1;
 
 		public GameDollData (){
 			InitDollData ();
@@ -34,8 +34,8 @@ namespace Game
 			categoryData.CategoryID = "body";
 			categoryData.m_IconNormalPath = "Sprite/Category/pattern";
 			categoryData.m_IconSelectedPath = "Sprite/Category/pattern_xz";
-			categoryData.m_BGNormalPath = "Category/btn_normal";
-			categoryData.m_BGSelectPath = "Category/btn_focus";
+			categoryData.m_BGNormalPath = "Category/Label_bg";
+			categoryData.m_BGSelectPath = "Category/Label_bg_xz";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
 			categoryData.m_Animation = CA_Dressup_body;
@@ -45,8 +45,8 @@ namespace Game
 			categoryData.CategoryID = "ear";
 			categoryData.m_IconNormalPath = "Sprite/Category/Ears";
 			categoryData.m_IconSelectedPath = "Sprite/Category/Ears_xz";
-			categoryData.m_BGNormalPath = "Category/btn_normal";
-			categoryData.m_BGSelectPath = "Category/btn_focus";
+			categoryData.m_BGNormalPath = "Category/Label_bg";
+			categoryData.m_BGSelectPath = "Category/Label_bg_xz";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
 			categoryData.m_Animation = CA_Dressup_ear;
@@ -56,8 +56,8 @@ namespace Game
 			categoryData.CategoryID = "eye";
 			categoryData.m_IconNormalPath = "Sprite/Category/eyes";
 			categoryData.m_IconSelectedPath = "Sprite/Category/eyes_xz";
-			categoryData.m_BGNormalPath = "Category/btn_normal";
-			categoryData.m_BGSelectPath = "Category/btn_focus";
+			categoryData.m_BGNormalPath = "Category/Label_bg";
+			categoryData.m_BGSelectPath = "Category/Label_bg_xz";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
 			categoryData.m_Animation = CA_Dressup_ear;
@@ -67,8 +67,8 @@ namespace Game
 			categoryData.CategoryID = "nose";
 			categoryData.m_IconNormalPath = "Sprite/Category/mouth";
 			categoryData.m_IconSelectedPath = "Sprite/Category/mouth_xz";
-			categoryData.m_BGNormalPath = "Category/btn_normal";
-			categoryData.m_BGSelectPath = "Category/btn_focus";
+			categoryData.m_BGNormalPath = "Category/Label_bg";
+			categoryData.m_BGSelectPath = "Category/Label_bg_xz";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
 			categoryData.m_Animation = CA_Dressup_ear;
@@ -78,8 +78,8 @@ namespace Game
 			categoryData.CategoryID = "tail";
 			categoryData.m_IconNormalPath = "Sprite/Category/tails";
 			categoryData.m_IconSelectedPath = "Sprite/Category/tails_xz";
-			categoryData.m_BGNormalPath = "Category/btn_normal";
-			categoryData.m_BGSelectPath = "Category/btn_focus";
+			categoryData.m_BGNormalPath = "Category/Label_bg";
+			categoryData.m_BGSelectPath = "Category/Label_bg_xz";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
 			categoryData.m_Animation = CA_Dressup_ear;
@@ -117,8 +117,8 @@ namespace Game
 //				break;
 //			}
 
-			info.padding = new RectOffset(10,0,20,0);
-			info.cellSize = new Vector2(320, 160);
+			info.padding = new RectOffset(36,0,20,0);
+			info.cellSize = new Vector2(230, 160);
 			info.spacing = new Vector2(0, 20);
 
 			return info;

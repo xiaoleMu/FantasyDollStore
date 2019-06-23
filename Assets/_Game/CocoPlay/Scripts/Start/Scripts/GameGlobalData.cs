@@ -178,6 +178,9 @@ namespace Game
 
 	#endregion
 
+
+			public int curSelectRole = -1;
+
     }
     
 }

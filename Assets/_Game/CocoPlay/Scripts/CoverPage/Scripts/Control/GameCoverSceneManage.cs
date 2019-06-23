@@ -14,7 +14,7 @@ namespace Game
 		{
 			base.OnButtonClickWithButtonName (button, pButtonName);
 			if (pButtonName == "btnCoverPageStart"){
-				CocoMainController.EnterScene (CocoSceneID.Doll);
+				CocoMainController.EnterScene (CocoSceneID.Map);
 			}
 		}
     }
