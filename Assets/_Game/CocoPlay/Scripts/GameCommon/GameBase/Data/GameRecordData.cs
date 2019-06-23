@@ -149,5 +149,12 @@ namespace Game
 		public bool isRVLock = false;
 
 		#endregion
+
+
+		#region Doll
+
+		public List<List<string>> recordDolls = new List<List<string>> ();
+
+		#endregion
 	}
 }

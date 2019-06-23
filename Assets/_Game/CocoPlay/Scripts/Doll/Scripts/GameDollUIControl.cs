@@ -49,6 +49,7 @@ namespace Game
 
 		void InitCategories ()
 		{
+			m_CategoryScroll.Clear ();
 			CocoRoleDressSceneHolder tSceneHolder = roleControl.CurRole.Dress.GetDressSceneHolder ("common");
 			m_CategoryItemDic = tSceneHolder.CategoryItemHolderDic;
 			string[] categoryList = GetCategoryList("common");
@@ -71,11 +72,18 @@ namespace Game
 		{
 
 			List<string> categoryList = new List<string> ();
-			categoryList.Add ("body");
-			categoryList.Add ("eye");
-			categoryList.Add ("ear");
-			categoryList.Add ("nose");
-			categoryList.Add ("tail");
+			if (m_CurStep == SceneStep.Step_Common){
+				categoryList.Add ("body");
+				categoryList.Add ("eye");
+				categoryList.Add ("ear");
+				categoryList.Add ("nose");
+				categoryList.Add ("tail");
+			}
+			else {
+				categoryList.Add ("ear");
+				categoryList.Add ("nose");
+				categoryList.Add ("tail");
+			}
 			return categoryList.ToArray<string> ();
 
 		}
@@ -181,6 +189,25 @@ namespace Game
 
 			return itemDataList;
 		}
+
+
+
+		#region UI Ani
+
+		[SerializeField]
+		GameObject m_UIPanelObj;
+
+		public IEnumerator ShowAni (){
+			LeanTween.moveLocalX (m_UIPanelObj, 0f, 0.3f);
+			yield return new WaitForSeconds (0.3f);
+		}
+
+		public IEnumerator HideAni (){
+			LeanTween.moveLocalX (m_UIPanelObj, 500f, 0.3f);
+			yield return new WaitForSeconds (0.3f);
+		}
+
+		#endregion
 			
 	}
 }

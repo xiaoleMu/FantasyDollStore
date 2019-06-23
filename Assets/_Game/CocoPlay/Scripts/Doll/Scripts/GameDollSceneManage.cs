@@ -87,6 +87,8 @@ namespace Game
 			m_CurRole.transform.localScale = Vector3.one * 300f;
 
 			m_CharOriAngle = m_CurRole.transform.eulerAngles;
+
+			StartCoroutine (initOtherRoles ());
 		}
 
 		protected override void AddListeners ()
@@ -115,25 +117,29 @@ namespace Game
 			base.OnButtonClickWithButtonName (button, pButtonName);
 
 			if (pButtonName == "next"){
-				switch (m_CurSceneStep){
-				case SceneStep.Step_Common:
-					m_CurSceneStep = SceneStep.Step_Detail;
-					GetComponent<GameDollUIControl> ().Init (m_CurSceneStep);
-					break;
-
-				case SceneStep.Step_Detail:
-					m_CurSceneStep = SceneStep.Step_Finish;
-					button.gameObject.SetActive (false);
-					break;
-
-				case SceneStep.Step_Finish:
-					m_CurSceneStep = SceneStep.Step_Common;
-					break;
-
-					default:
-					m_CurSceneStep = SceneStep.Step_Common;
-					break;
-				}
+				StartCoroutine (PlayAni ());
+//				switch (m_CurSceneStep){
+//				case SceneStep.Step_Common:
+//					m_CurSceneStep = SceneStep.Step_Detail;
+//					GetComponent<GameDollUIControl> ().Init (m_CurSceneStep);
+//					break;
+//
+//				case SceneStep.Step_Detail:
+//					m_CurSceneStep = SceneStep.Step_Finish;
+//					button.gameObject.SetActive (false);
+//					break;
+//
+//				case SceneStep.Step_Finish:
+//					m_CurSceneStep = SceneStep.Step_Common;
+//					break;
+//
+//					default:
+//					m_CurSceneStep = SceneStep.Step_Common;
+//					break;
+//				}
+			}
+			else if (pButtonName == "doll"){
+				CocoMainController.ShowPopup ("RoleSelectedPopup");
 			}
 		}
 
@@ -345,6 +351,60 @@ namespace Game
 		}
 
 		#endregion
+
+
+
+
+
+
+
+		#region DollAni
+
+		private IEnumerator PlayAni (){
+			RecordDoll ();
+
+			yield return StartCoroutine (GetComponent<GameDollUIControl> ().HideAni ());
+
+			yield return StartCoroutine (m_CurRole.Animation.StartPlay (dressupData.CA_Dressup_win01));
+			yield return StartCoroutine (m_CurRole.Animation.StartPlay (dressupData.CA_Dressup_win02));
+		}
+
+		#endregion
+
+
+		#region OtherCharacter
+
+		[SerializeField]
+		Transform m_DollTransParent;
+
+		private Vector3[] m_DollsPos = new Vector3[] {new Vector3(0.95f, 0.34f, 0f), new Vector3(0.31f, 0.34f, 0f), new Vector3(-0.31f, 0.34f, 0f),new Vector3(-0.95f, 0.34f, 0f),
+			new Vector3(0.95f, -0.39f, 0f), new Vector3(0.31f, -0.39f, 0f), new Vector3(-0.31f, -0.39f, 0f),new Vector3(-0.95f, -0.39f, 0f)};
+
+		protected IEnumerator initOtherRoles()
+		{
+			for (int i=0; i<recordStateModel.RecordDolls.Count; i++){
+				string roleName = gameGlobalData.GetRoleConfigID(GameRoleID.Coco);
+				CocoRoleEntity tempDoll = roleControl.CreateTempRole(roleName, roleName, m_DollTransParent);
+				tempDoll.Dress.AddDressItem (recordStateModel.RecordDolls[i]);
+				tempDoll.transform.localPosition = m_DollsPos[i];
+				tempDoll.transform.localScale = Vector3.one * 120f;
+				tempDoll.Animation.SetAnimationData (new GameDollAnimationData ());
+				tempDoll.Animation.SetAnimatorController ("dressup_animator");
+				tempDoll.Animation.SetAutoSwithEnable (true);
+				tempDoll.Animation.Play (dressupData.CA_Dressup_Standby);
+
+				yield return new WaitForEndOfFrame ();
+			}
+		}
+
+		private void RecordDoll (){
+			List<string> doll = m_CurRole.Dress.GetAllDressIds ();
+
+			recordStateModel.AddRecordDoll (doll);
+		}
+
+		#endregion
+
 
 	}
 }
