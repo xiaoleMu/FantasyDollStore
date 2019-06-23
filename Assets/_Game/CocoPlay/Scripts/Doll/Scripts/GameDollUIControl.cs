@@ -39,8 +39,11 @@ namespace Game
 			base.RemoveListeners ();
 		}
 
-		public void Init ()
+		private SceneStep m_CurStep = SceneStep.Step_Common;
+
+		public void Init (SceneStep step)
 		{
+			m_CurStep = step;
 			InitCategories ();
 		}
 
@@ -64,15 +67,15 @@ namespace Game
 				dressupCategoryBtnClickSignal.Dispatch (FirstButton);
 		}
 
-		public static string[] GetCategoryList (string sceneID)
+		public string[] GetCategoryList (string sceneID)
 		{
 
 			List<string> categoryList = new List<string> ();
 			categoryList.Add ("body");
-			categoryList.Add ("head");
-			categoryList.Add ("tail");
 			categoryList.Add ("eye");
 			categoryList.Add ("ear");
+			categoryList.Add ("nose");
+			categoryList.Add ("tail");
 			return categoryList.ToArray<string> ();
 
 		}

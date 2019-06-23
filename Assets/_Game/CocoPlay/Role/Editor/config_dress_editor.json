@@ -8,24 +8,18 @@
     "randomSorting"        : true,
     "useAssetBundle"       : false,
     "dressCategoryCoverLayerIds" : {
-        "arm" : "Arm",
         "body" : "Body",
         "ear"  : "Ear",
         "eye"  : "Eye",
-        "head" : "Head",
-        "leg"  : "Leg",
         "nose" : "Nose",
         "tail" : "Tail"
     },
     "dressItemPrefixCoverLayerIds" : {
     },
     "dressMainCategoryIds"         : [
-        "arm",
         "body",
         "ear",
         "eye",
-        "head",
-        "leg",
         "nose",
         "tail"
     ],
@@ -59,10 +53,11 @@
             "roleId" : "coco",
             "boneItemId" : "player",
             "basicItemIds" : [
-                "arm_001",
+                "eye_001",
                 "body_001",
-                "head_001",
-                "leg_001"
+                "ear_001",
+                "tail_001",
+                "eye_001"
             ],
             "dressId"      : "coco",
             "bodyId"       : "common",

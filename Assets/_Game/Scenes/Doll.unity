@@ -1939,7 +1939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackSceneID: 1
   nextSceneId: 20
-  nextButton: {fileID: 1659910028}
+  nextButton: {fileID: 0}
   isCreateNewCharacter: 0
   bubbleImage: {fileID: 0}
   showSprite: {fileID: 21300000, guid: 8f0621dfa99274fdeb52aa5b618d426c, type: 3}
@@ -2177,7 +2177,7 @@ GameObject:
   - component: {fileID: 1659910031}
   - component: {fileID: 1659910030}
   m_Layer: 5
-  m_Name: Button_complete
+  m_Name: Button_next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2213,9 +2213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonId:
-    m_FirstUsed: 1
+    m_FirstUsed: 0
     m_First: 3
-    m_Second: 
+    m_Second: next
   pressScale:
     m_Used: 1
     m_Value: 1.1

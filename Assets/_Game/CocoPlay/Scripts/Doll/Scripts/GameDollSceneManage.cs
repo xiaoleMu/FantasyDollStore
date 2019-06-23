@@ -17,8 +17,8 @@ namespace Game
 		[Inject]
 		public DragGestureSignal dragGestureSignal { get; set; }
 
-		[Inject]
-		public PinchGestureSignal pinchGestureSignal { get; set; }
+//		[Inject]
+//		public PinchGestureSignal pinchGestureSignal { get; set; }
 
 		[Inject]
 		public GameDollCategoryBtnClickSignal categoryBtnClickSignal { get; set; }
@@ -73,7 +73,7 @@ namespace Game
 			m_CameraOriginPos = m_MainCamera.transform.position;
 			m_CameraOriginAngles = m_MainCamera.transform.eulerAngles;
 			m_CameraMoveDir = m_CameraFarPos - m_CameraNearPos;
-			GetComponent<GameDollUIControl> ().Init ();
+			GetComponent<GameDollUIControl> ().Init (m_CurSceneStep);
 
 
 			m_CurRole.Animation.SetAnimationData (new GameDollAnimationData ());
@@ -86,8 +86,6 @@ namespace Game
 			recordScale = m_CurRole.transform.localScale;
 			m_CurRole.transform.localScale = Vector3.one * 300f;
 
-			Transform root = m_CurRole.Dress.GetBone ("Bip001");
-
 			m_CharOriAngle = m_CurRole.transform.eulerAngles;
 		}
 
@@ -96,20 +94,47 @@ namespace Game
 			base.AddListeners ();
 
 			dragGestureSignal.AddListener (OnSceneDrag);
-			pinchGestureSignal.AddListener (OnScenePinch);
+//			pinchGestureSignal.AddListener (OnScenePinch);
 			categoryBtnClickSignal.AddListener (OnCategoryBtnClick);
 			itemBtnClickSignal.AddListener (OnItemBtnClick);
-//			m_FinishedSingal.AddListener(OnSceneFinished);
 		}
 
 		protected override void RemoveListeners ()
 		{
 			dragGestureSignal.RemoveListener (OnSceneDrag);
-			pinchGestureSignal.RemoveListener (OnScenePinch);
+//			pinchGestureSignal.RemoveListener (OnScenePinch);
 			categoryBtnClickSignal.RemoveListener (OnCategoryBtnClick);
 			itemBtnClickSignal.RemoveListener (OnItemBtnClick);
-//			m_FinishedSingal.RemoveListener(OnSceneFinished);
 			base.RemoveListeners ();
+		}
+
+		private SceneStep m_CurSceneStep = SceneStep.Step_Common;
+
+		protected override void OnButtonClickWithButtonName (CocoUINormalButton button, string pButtonName)
+		{
+			base.OnButtonClickWithButtonName (button, pButtonName);
+
+			if (pButtonName == "next"){
+				switch (m_CurSceneStep){
+				case SceneStep.Step_Common:
+					m_CurSceneStep = SceneStep.Step_Detail;
+					GetComponent<GameDollUIControl> ().Init (m_CurSceneStep);
+					break;
+
+				case SceneStep.Step_Detail:
+					m_CurSceneStep = SceneStep.Step_Finish;
+					button.gameObject.SetActive (false);
+					break;
+
+				case SceneStep.Step_Finish:
+					m_CurSceneStep = SceneStep.Step_Common;
+					break;
+
+					default:
+					m_CurSceneStep = SceneStep.Step_Common;
+					break;
+				}
+			}
 		}
 
 		#endregion
@@ -180,42 +205,42 @@ namespace Game
 			}
 		}
 
-		private void OnScenePinch (PinchGesture pPinchGesture)
-		{
-			switch (pPinchGesture.Phase) {
-			case ContinuousGesturePhase.Started:
-				isUGUITouched = CCCollider.IsTouchCollider (CocoMainController.UICamera, m_UICollider);
-				if (!isUGUITouched)
-					CCAction.Stop (Camera.main.gameObject);
-				break;
-			case ContinuousGesturePhase.Updated:
-				if (!isUGUITouched) {
-
-					float dis = Mathf.Abs (Camera.main.transform.eulerAngles.x - m_CameraOriginAngles.x);
-
-					if (dis > 0) {
-
-						CCAction.RotateToX (Camera.main.gameObject, m_CameraOriginAngles.x, 0.2f);
-
-					}
-
-					Vector3 NearPos = GetNearPos ();
-					Vector3 pCamPos = Camera.main.transform.localPosition;
-					pCamPos -= m_CameraMoveDir * pPinchGesture.Delta * Time.deltaTime * 0.15f;
-					pCamPos.x = CheckValue (pCamPos.x, NearPos.x, m_CameraFarPos.x);
-					pCamPos.y = CheckValue (pCamPos.y, NearPos.y, m_CameraFarPos.y);
-					pCamPos.z = CheckValue (pCamPos.z, NearPos.z, m_CameraFarPos.z);
-					Camera.main.transform.position = pCamPos;
-					CheckCameraPosY ();
-
-				}
-
-				break;
-			case ContinuousGesturePhase.Ended:
-				isUGUITouched = false;
-				break;
-			}
-		}
+//		private void OnScenePinch (PinchGesture pPinchGesture)
+//		{
+//			switch (pPinchGesture.Phase) {
+//			case ContinuousGesturePhase.Started:
+//				isUGUITouched = CCCollider.IsTouchCollider (CocoMainController.UICamera, m_UICollider);
+//				if (!isUGUITouched)
+//					CCAction.Stop (Camera.main.gameObject);
+//				break;
+//			case ContinuousGesturePhase.Updated:
+//				if (!isUGUITouched) {
+//
+//					float dis = Mathf.Abs (Camera.main.transform.eulerAngles.x - m_CameraOriginAngles.x);
+//
+//					if (dis > 0) {
+//
+//						CCAction.RotateToX (Camera.main.gameObject, m_CameraOriginAngles.x, 0.2f);
+//
+//					}
+//
+//					Vector3 NearPos = GetNearPos ();
+//					Vector3 pCamPos = Camera.main.transform.localPosition;
+//					pCamPos -= m_CameraMoveDir * pPinchGesture.Delta * Time.deltaTime * 0.15f;
+//					pCamPos.x = CheckValue (pCamPos.x, NearPos.x, m_CameraFarPos.x);
+//					pCamPos.y = CheckValue (pCamPos.y, NearPos.y, m_CameraFarPos.y);
+//					pCamPos.z = CheckValue (pCamPos.z, NearPos.z, m_CameraFarPos.z);
+//					Camera.main.transform.position = pCamPos;
+//					CheckCameraPosY ();
+//
+//				}
+//
+//				break;
+//			case ContinuousGesturePhase.Ended:
+//				isUGUITouched = false;
+//				break;
+//			}
+//		}
 
 		void DragCamera (float DeltaY)
 		{
@@ -227,16 +252,7 @@ namespace Game
 
 		Vector3 GetNearPos ()
 		{
-			if (m_CurCategory == "shoes")
-				return m_Camera_Pos_Shoes;
-//			else if (m_CurCategory == "accessories")
-//				return m_Camera_Pos_Acessory;
-//			else if (m_CurCategory == "bottom")
-//				return m_Camera_Pos_Skirt;
-//			else if (m_CurCategory == "dress")
-//				return m_Camera_Pos_Acessory;
-			else
-				return m_CameraNearPos;
+			return m_CameraNearPos;
 		}
 
 		void CheckCameraPosY ()
@@ -279,20 +295,20 @@ namespace Game
 			m_CameraMoveDir = m_CameraFarPos - GetNearPos ();
 		}
 
-		float CheckValue (float value, float x, float y)
-		{
-			float min;
-			float max;
-			if (x > y) {
-				min = y;
-				max = x;
-			} else {
-				min = x;
-				max = y;
-			}
-			value = Mathf.Clamp (value, min, max);
-			return value;
-		}
+//		float CheckValue (float value, float x, float y)
+//		{
+//			float min;
+//			float max;
+//			if (x > y) {
+//				min = y;
+//				max = x;
+//			} else {
+//				min = x;
+//				max = y;
+//			}
+//			value = Mathf.Clamp (value, min, max);
+//			return value;
+//		}
 
 		#endregion
 

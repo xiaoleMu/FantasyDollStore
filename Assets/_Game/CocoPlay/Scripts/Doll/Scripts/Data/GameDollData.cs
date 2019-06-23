@@ -29,6 +29,17 @@ namespace Game
 			m_CategoryList = new List<CocoDressupCategoryData> ();
 
 			CocoDressupCategoryData categoryData = new CocoDressupCategoryData ();
+			categoryData.CategoryID = "body";
+			categoryData.m_IconNormalPath = "Sprite/Category/pattern";
+			categoryData.m_IconSelectedPath = "Sprite/Category/pattern_xz";
+			categoryData.m_BGNormalPath = "Category/btn_normal";
+			categoryData.m_BGSelectPath = "Category/btn_focus";
+			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
+			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
+			categoryData.m_Animation = CA_Dressup_body;
+			m_CategoryList.Add (categoryData);
+
+			categoryData = new CocoDressupCategoryData ();
 			categoryData.CategoryID = "ear";
 			categoryData.m_IconNormalPath = "Sprite/Category/Ears";
 			categoryData.m_IconSelectedPath = "Sprite/Category/Ears_xz";
@@ -47,30 +58,18 @@ namespace Game
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-//            categoryData.m_Animation = CA_Dressup_buttom;
-			m_CategoryList.Add (categoryData);
-
-
-			categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "body";
-			categoryData.m_IconNormalPath = "Sprite/Category/pattern";
-			categoryData.m_IconSelectedPath = "Sprite/Category/pattern_xz";
-			categoryData.m_BGNormalPath = "Category/btn_normal";
-			categoryData.m_BGSelectPath = "Category/btn_focus";
-			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
-			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-//            categoryData.m_Animation = CA_Dressup_buttom;
+			categoryData.m_Animation = CA_Dressup_ear;
 			m_CategoryList.Add (categoryData);
 
 			categoryData = new CocoDressupCategoryData ();
-			categoryData.CategoryID = "head";
+			categoryData.CategoryID = "nose";
 			categoryData.m_IconNormalPath = "Sprite/Category/mouth";
-			categoryData.m_IconSelectedPath = "Sprite/Category/mouth";
+			categoryData.m_IconSelectedPath = "Sprite/Category/mouth_xz";
 			categoryData.m_BGNormalPath = "Category/btn_normal";
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-//            categoryData.m_Animation = CA_Dressup_top;
+			categoryData.m_Animation = CA_Dressup_ear;
 			m_CategoryList.Add (categoryData);
 
 			categoryData = new CocoDressupCategoryData ();
@@ -81,7 +80,7 @@ namespace Game
 			categoryData.m_BGSelectPath = "Category/btn_focus";
 			categoryData.m_ItemPrefabsPath = "prefabs/Dressup_Item";
 			categoryData.m_ItemGridInfo = GetGridInfo (categoryData.CategoryID);
-//            categoryData.m_Animation = CA_Dressup_top;
+			categoryData.m_Animation = CA_Dressup_ear;
 			m_CategoryList.Add (categoryData);
 
 
@@ -100,21 +99,26 @@ namespace Game
 		protected virtual GridInfo GetGridInfo(string categoryID)
 		{
 			GridInfo info = new GridInfo();
-			switch(categoryID)
-			{
-			case "dress":
-			case "bottom":
-				info.padding = new RectOffset(0,0,25,25);
-				info.cellSize = new Vector2(150, 150);
-				info.spacing = new Vector2(0, 15);
-				break;
+//			switch(categoryID)
+//			{
+//			case "dress":
+//			case "bottom":
+//				info.padding = new RectOffset(0,0,25,25);
+//				info.cellSize = new Vector2(150, 150);
+//				info.spacing = new Vector2(0, 15);
+//				break;
+//
+//			default:
+//				info.padding = new RectOffset(0,0,25,25);
+//				info.cellSize = new Vector2(150, 150);
+//				info.spacing = new Vector2(0, 15);
+//				break;
+//			}
 
-			default:
-				info.padding = new RectOffset(0,0,25,25);
-				info.cellSize = new Vector2(150, 150);
-				info.spacing = new Vector2(0, 15);
-				break;
-			}
+			info.padding = new RectOffset(10,0,20,0);
+			info.cellSize = new Vector2(320, 160);
+			info.spacing = new Vector2(0, 20);
+
 			return info;
 		}
 	}
