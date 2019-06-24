@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.4705882, g: 0.4221453, b: 0.4657439, a: 1}
   m_AmbientGroundColor: {r: 0.4705882, g: 0.4221453, b: 0.4657439, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d705f86fe3fd8404babede0b0969031b, type: 2}
   m_HaloStrength: 0.5
@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 52927961}
   - component: {fileID: 52927960}
   - component: {fileID: 52927959}
+  - component: {fileID: 52927958}
   m_Layer: 0
   m_Name: Camera_Main
   m_TagString: MainCamera
@@ -162,6 +163,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &52927958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52927957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a879e317c20b0d41a9a56f1a97f4cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyMethod: 0
+  SampleCount: 1
+  PerPixelNormals: 1
+  Intensity: 0.4
+  Tint: {r: 0, g: 0, b: 0, a: 1}
+  Radius: 0.22
+  PowerExponent: 2.4
+  Bias: 0
+  CacheAware: 0
+  Downsample: 0
+  FadeEnabled: 1
+  FadeStart: 100
+  FadeLength: 50
+  FadeToIntensity: 1
+  FadeToRadius: 1
+  FadeToPowerExponent: 1.8
+  BlurEnabled: 1
+  BlurRadius: 4
+  BlurPasses: 1
+  BlurSharpness: 9.91
 --- !u!124 &52927959
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2095,7 +2127,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
