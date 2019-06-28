@@ -48,6 +48,7 @@ namespace Game
 		protected void Init ()
 		{
 			m_DressItemData.LinkedDressItemHolder.LoadIconImage (m_Icon);
+			m_Icon.SetNativeSize ();
 
 			ChangeStatus ();
 		}
