@@ -51,6 +51,21 @@ namespace Game
 
 		private void OnChangeDoll (bool change){
 			if (change){
+				if (GlobalData.curSelectRole != -1){
+					roleControl.CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[GlobalData.curSelectRole].dress);
+
+					List<string> ids = roleControl.CurRole.Dress.GetDressIdsByCategory ("body");
+					foreach (string id in ids){
+						var body = roleControl.CurRole.Dress.GetDressItem (id);
+						SkinnedMeshRenderer render = body.ItemRenderers[0];
+						for(int j=0; j<render.materials.Length; j++){
+							Texture2D normal = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_nomal", recordStateModel.RecordDolls[GlobalData.curSelectRole].detailIndex));
+							Texture2D rgb = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_rgb", recordStateModel.RecordDolls[GlobalData.curSelectRole].detailIndex));
+							render.materials[j].SetTexture ("_BumpMap", normal);
+							render.materials[j].SetTexture ("_metallicRsmoothGdiffuseB", rgb);
+						}
+					}
+				}
 				CocoMainController.EnterScene (CocoSceneID.Doll);
 			}
 		}
@@ -73,7 +88,20 @@ namespace Game
 			for (int i=0; i<recordStateModel.RecordDolls.Count; i++){
 				string roleName = gameGlobalData.GetRoleConfigID(GameRoleID.Coco);
 				CocoRoleEntity tempDoll = roleControl.CreateTempRole(roleName, roleName, m_DollTransParent);
-				tempDoll.Dress.AddDressItem (recordStateModel.RecordDolls[i]);
+				tempDoll.Dress.AddDressItem (recordStateModel.RecordDolls[i].dress);
+
+				List<string> ids = tempDoll.Dress.GetDressIdsByCategory ("body");
+				foreach (string id in ids){
+					var body = tempDoll.Dress.GetDressItem (id);
+					SkinnedMeshRenderer render = body.ItemRenderers[0];
+					for(int j=0; j<render.materials.Length; j++){
+						Texture2D normal = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_nomal", recordStateModel.RecordDolls[i].detailIndex));
+						Texture2D rgb = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_rgb", recordStateModel.RecordDolls[i].detailIndex));
+						render.materials[j].SetTexture ("_BumpMap", normal);
+						render.materials[j].SetTexture ("_metallicRsmoothGdiffuseB", rgb);
+					}
+				}
+
 				tempDoll.transform.localPosition = m_DollsPos[i];
 				tempDoll.transform.localScale = Vector3.one * 100f;
 				tempDoll.Animation.SetAnimationData (new GameDollAnimationData ());

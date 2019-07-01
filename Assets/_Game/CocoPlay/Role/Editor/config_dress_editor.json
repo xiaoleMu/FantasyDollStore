@@ -61,7 +61,7 @@
             ],
             "dressId"      : "coco",
             "bodyId"       : "common",
-            "enableShadow" : false
+            "enableShadow" : true
         }
     ]
 }

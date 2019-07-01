@@ -6,6 +6,7 @@ using Game;
 
 public class GameDollCategoryBtnClickSignal : Signal<GameDollCategoryButton>{}
 public class GameDollItemBtnClickSignal : Signal<GameDollItemButton>{}
+public class GameDollDetailItemBtnClickSignal : Signal<int>{}
 
 public enum SceneStep {
 	None,

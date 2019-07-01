@@ -47,6 +47,7 @@ namespace Game
 			InitCategories ();
 		}
 
+		List<GameObject> m_CategoryObj = new List<GameObject>();
 		void InitCategories ()
 		{
 			m_CategoryScroll.Clear ();
@@ -57,6 +58,7 @@ namespace Game
 
 			for (int i = 0; i < categoryList.Length; i++) {
 				GameDollCategoryButton button = GameDollCategoryButton.Create (categoryList [i], m_CategoryScroll.GridGroup.transform);
+				m_CategoryObj.Add (button.gameObject);
 				if (FirstButton == null) {
 					FirstButton = button;
 				}
@@ -114,7 +116,7 @@ namespace Game
 		}
 
 
-		List<GameDollItemButton> m_ButtonList = new List<GameDollItemButton> ();
+		List<GameObject> m_ButtonList = new List<GameObject> ();
 
 		void InitCategoryItems (CocoDressupCategoryData data)
 		{
@@ -128,35 +130,35 @@ namespace Game
 				for (int i = 0; i < itemDataList.Count; i++) {
                     #region fix
                     CocoRoleDressItemHolder itemHolder = itemDataList[i];
-					Debug.LogError ("itemHolder id : " + itemHolder.id);
-					int index = i-1;
-					if (index> 0) {
-						switch (index % 3) {
-							case 0:
-								itemHolder.lockType = CocoLockType.Non;
-							break;
-                            case 1:
-								itemHolder.lockType = CocoLockType.RV;
-                                break;
-                            case 2:
-								itemHolder.lockType = CocoLockType.IAP;
-                                break;
-                            default:
-								itemHolder.lockType = CocoLockType.Non;
-                                break;
-                        }
-                    } else {
-                        itemHolder.lockType = CocoLockType.Non;
-                    }
-
-					if (data.m_LockType == CocoLockType.RV){
-						itemHolder.lockType = CocoLockType.Non;
-					}
+//					Debug.LogError ("itemHolder id : " + itemHolder.id);
+//					int index = i-1;
+//					if (index> 0) {
+//						switch (index % 3) {
+//							case 0:
+//								itemHolder.lockType = CocoLockType.Non;
+//							break;
+//                            case 1:
+//								itemHolder.lockType = CocoLockType.RV;
+//                                break;
+//                            case 2:
+//								itemHolder.lockType = CocoLockType.IAP;
+//                                break;
+//                            default:
+//								itemHolder.lockType = CocoLockType.Non;
+//                                break;
+//                        }
+//                    } else {
+//                        itemHolder.lockType = CocoLockType.Non;
+//                    }
+//
+//					if (data.m_LockType == CocoLockType.RV){
+//						itemHolder.lockType = CocoLockType.Non;
+//					}
 
                     itemHolder.order = i ;
                     #endregion
 					GameDollItemButton button = GameDollItemButton.Create (data.m_ItemPrefabsPath,itemHolder , m_ItemScroll.GridGroup.transform, data.CategoryID);
-					m_ButtonList.Add (button);
+					m_ButtonList.Add (button.gameObject);
 				}
 			}
 
@@ -190,6 +192,56 @@ namespace Game
 			return itemDataList;
 		}
 
+
+		#region Detail
+
+		public void DetailCategoryClick (){
+			StartCoroutine (UpdateDetailItemList ("materia"));
+		}
+
+		IEnumerator UpdateDetailItemList (string categoryID)
+		{
+			m_CategoryObj.Clear();
+			m_CategoryScroll.Clear ();
+
+			CocoMainController.Instance.TouchEnable = false;
+			m_ItemScroll.ScrollRect.enabled = false;
+			RectTransform rectTrans = m_ItemScroll.GridGroup.GetComponent<RectTransform> ();
+
+			CCAction.MoveLocalY (m_ItemScroll.GridGroup.gameObject, -768, 0.3f);
+			yield return new WaitForSeconds (0.3f);
+			m_ItemScroll.Clear ();
+			yield return new WaitForEndOfFrame ();
+
+			InitDetailCategoryItems (categoryID);
+
+			yield return new WaitForEndOfFrame ();
+
+			m_ItemScroll.ScrollRect.enabled = true;
+			CocoMainController.Instance.TouchEnable = true;
+		}
+
+		void InitDetailCategoryItems (string categoryID)
+		{
+//			m_ItemScroll.GridGroup.SetInfo (data.m_ItemGridInfo);
+
+//			List<CocoRoleDressItemHolder> itemDataList = m_CategoryItemDic [data.CategoryID];
+//			itemDataList = GetItemList (itemDataList, data.CategoryID);
+
+			m_ButtonList.Clear ();
+
+//			if (itemDataList != null) {
+			for (int i = 0; i < 6; i++) {
+				GameDollDetailItemButton button = GameDollDetailItemButton.Create ( m_ItemScroll.GridGroup.transform, categoryID, i);
+				m_ButtonList.Add (button.gameObject);
+			}
+//			}
+
+			m_ItemScroll.InitSize ();
+			m_ItemScroll.SetGridEnable (true);
+		}
+
+		#endregion
 
 
 		#region UI Ani

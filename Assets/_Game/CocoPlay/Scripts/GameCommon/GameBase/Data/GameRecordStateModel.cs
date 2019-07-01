@@ -9,13 +9,13 @@ namespace Game
 	public class GameRecordStateModel : StateModel<GameRecordData>
 	{
 
-		public List<List<string>> RecordDolls {
+		public List<DollRecordData> RecordDolls {
 			get {
 				return _data.recordDolls;
 			}
 		}
 
-		public void AddRecordDoll (List <string> recordDoll, int index = -1){
+		public void AddRecordDoll (DollRecordData recordDoll, int index = -1){
 			if (index >= 0){
 				_data.recordDolls[index] = recordDoll;
 			}
@@ -25,5 +25,10 @@ namespace Game
 			}
 			Save ();
 		}
+	}
+
+	public class DollRecordData {
+		public int detailIndex;
+		public List<string> dress;
 	}
 }

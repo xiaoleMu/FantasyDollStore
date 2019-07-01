@@ -11,12 +11,14 @@ namespace Game
 			base.InitSignals ();
 			Bind <GameDollCategoryBtnClickSignal> ();
 			Bind <GameDollItemBtnClickSignal> ();
+			Bind <GameDollDetailItemBtnClickSignal> ();
 		}
 
 		protected override void CleanSignals ()
 		{
 			Unbind <GameDollCategoryBtnClickSignal> ();
 			Unbind <GameDollItemBtnClickSignal> ();
+			Unbind <GameDollDetailItemBtnClickSignal> ();
 			base.CleanSignals ();
 		}
 

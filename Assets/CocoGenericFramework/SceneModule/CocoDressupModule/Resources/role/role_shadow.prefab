@@ -91,9 +91,9 @@ MonoBehaviour:
     m_Value: 0
   m_FollowInLocalSpace: 1
   m_ShadowSize:
-    m_Value: {x: 0.036666665, y: 0.0033333334, z: 0.036666665}
+    m_Value: {x: 0.04, y: 0.04, z: 0.04}
   m_ShadowStrength:
-    m_Value: 0.3
+    m_Value: 0.6
   m_ShadowStrengthProperty: _Color
   m_ShadowRenderQueue:
     m_Value: 3001

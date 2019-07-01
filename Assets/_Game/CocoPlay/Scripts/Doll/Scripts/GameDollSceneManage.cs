@@ -61,6 +61,11 @@ namespace Game
 			dressGuide = CocoLoad.InstantiateOrCreate ("character_rotate_arrow", transform, CocoLoad.TransStayOption.Local);
 			Input.multiTouchEnabled = true;
 			CocoNative.Log("===ShowDialog==Start_SceneName: "+m_SceneID.ToString());
+
+			if (GlobalData.curSelectRole != -1){
+				dressupData.m_DetailIndex = recordStateModel.RecordDolls[dressupData.m_DetailIndex].detailIndex;
+			}
+//			dressupData.m_DetailIndex = GlobalData.m_DetailIndex;
 		}
 
 		protected override void initCharacter ()
@@ -81,14 +86,14 @@ namespace Game
 			m_CurRole.Animation.SetAutoSwithEnable (true);
 			m_CurRole.Animation.Play (dressupData.CA_Dressup_Standby);
 
-			m_CurRole.transform.localPosition = new Vector3 (-0.1f, 0.26f, 0.43f);
+			m_CurRole.transform.localPosition = new Vector3 (-0.04f, 0.26f, -0.17f);
 			m_CurRole.transform.localEulerAngles = new Vector3 (0f, 0f, 0f);
 			recordScale = m_CurRole.transform.localScale;
 			m_CurRole.transform.localScale = Vector3.one * 300f;
 
 			m_CharOriAngle = m_CurRole.transform.eulerAngles;
 
-			StartCoroutine (initOtherRoles ());
+//			StartCoroutine (initOtherRoles ());
 		}
 
 		protected override void AddListeners ()
@@ -119,27 +124,42 @@ namespace Game
 			base.OnButtonClickWithButtonName (button, pButtonName);
 
 			if (pButtonName == "next"){
-				button.gameObject.SetActive (false);
-				StartCoroutine (PlayAni ());
-//				switch (m_CurSceneStep){
-//				case SceneStep.Step_Common:
-//					m_CurSceneStep = SceneStep.Step_Detail;
-//					GetComponent<GameDollUIControl> ().Init (m_CurSceneStep);
-//					break;
-//
-//				case SceneStep.Step_Detail:
-//					m_CurSceneStep = SceneStep.Step_Finish;
-//					button.gameObject.SetActive (false);
-//					break;
-//
-//				case SceneStep.Step_Finish:
-//					m_CurSceneStep = SceneStep.Step_Common;
-//					break;
-//
-//					default:
-//					m_CurSceneStep = SceneStep.Step_Common;
-//					break;
-//				}
+				switch (m_CurSceneStep){
+				case SceneStep.Step_Common:
+					m_CurSceneStep = SceneStep.Step_Detail;
+					StartCoroutine (ShowDetail ());
+					break;
+
+				case SceneStep.Step_Detail:
+					m_CurSceneStep = SceneStep.Step_Finish;
+					button.gameObject.SetActive (false);
+					StartCoroutine (PlayAni ());
+					break;
+
+					default:
+					m_CurSceneStep = SceneStep.Step_Common;
+					break;
+				}
+			}
+			else if (pButtonName == "font"){
+				switch (m_CurSceneStep){
+				case SceneStep.Step_Common:
+					CocoMainController.EnterScene (CocoSceneID.Map);
+					break;
+
+				case SceneStep.Step_Detail:
+					m_CurSceneStep = SceneStep.Step_Common;
+					break;
+
+				case SceneStep.Step_Finish:
+					m_CurSceneStep = SceneStep.Step_Detail;
+					StartCoroutine (ShowDetail ());
+					break;
+
+				default:
+					m_CurSceneStep = SceneStep.Step_Common;
+					break;
+				}
 			}
 			else if (pButtonName == "doll"){
 				CocoMainController.ShowPopup ("RoleSelectedPopup");
@@ -152,8 +172,21 @@ namespace Game
 
 		private void OnChangeDoll (bool change){
 			if (change){
-				m_CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[GlobalData.curSelectRole]);
+				m_CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[GlobalData.curSelectRole].dress);
+//				m_CurRole.Dress.getdre
 			}
+		}
+
+		private IEnumerator ShowDetail (){
+			CocoMainController.Instance.TouchEnable = false;
+
+			CCAction.RotateTo (m_CurRole.gameObject, new Vector3 (0f, 0f, 0f), 0.8f, LeanTweenType.easeInOutQuad);
+
+			yield return StartCoroutine (GetComponent<GameDollUIControl> ().HideAni ());
+			GetComponent<GameDollUIControl> ().DetailCategoryClick ();
+			yield return StartCoroutine (GetComponent<GameDollUIControl> ().ShowAni ());
+
+			CocoMainController.Instance.TouchEnable = true;
 		}
 
 		#endregion
@@ -307,6 +340,13 @@ namespace Game
 				CCAction.Move (Camera.main.gameObject, m_CameraOriginPos, 0.8f, LeanTweenType.easeInOutQuad);
 				CCAction.RotateTo (Camera.main.gameObject, m_CameraOriginAngles, 0.8f, LeanTweenType.easeInOutQuad);
 			}
+
+			if (category == "tail"){
+				CCAction.RotateTo (m_CurRole.gameObject, new Vector3 (0f, 160f, 0f), 0.8f, LeanTweenType.easeInOutQuad);
+			}
+			else{
+				CCAction.RotateTo (m_CurRole.gameObject, new Vector3 (0f, 0f, 0f), 0.8f, LeanTweenType.easeInOutQuad);
+			}
 		}
 
 		void ResetCameraDir ()
@@ -400,7 +440,7 @@ namespace Game
 			for (int i=0; i<recordStateModel.RecordDolls.Count; i++){
 				string roleName = gameGlobalData.GetRoleConfigID(GameRoleID.Coco);
 				CocoRoleEntity tempDoll = roleControl.CreateTempRole(roleName, roleName, m_DollTransParent);
-				tempDoll.Dress.AddDressItem (recordStateModel.RecordDolls[i]);
+				tempDoll.Dress.AddDressItem (recordStateModel.RecordDolls[i].dress);
 				tempDoll.transform.localPosition = m_DollsPos[i];
 				tempDoll.transform.localScale = Vector3.one * 120f;
 				tempDoll.Animation.SetAnimationData (new GameDollAnimationData ());
@@ -414,8 +454,10 @@ namespace Game
 
 		private void RecordDoll (){
 			List<string> doll = m_CurRole.Dress.GetAllDressIds ();
-
-			recordStateModel.AddRecordDoll (doll, GlobalData.curSelectRole);
+			DollRecordData recordData = new DollRecordData ();
+			recordData.detailIndex = dressupData.m_DetailIndex;
+			recordData.dress = doll;
+			recordStateModel.AddRecordDoll (recordData, GlobalData.curSelectRole);
 		}
 
 		#endregion

@@ -19,6 +19,8 @@ namespace Game
 		public CCAnimationData CA_Dressup_win02 = new CCAnimationData("win02");
 
 
+		public int m_DetailIndex = 0;
+
 		List <CocoDressupCategoryData> m_CategoryList;
 
 //		public int curSelectRole = -1;
@@ -85,7 +87,6 @@ namespace Game
 			categoryData.m_Animation = CA_Dressup_ear;
 			m_CategoryList.Add (categoryData);
 
-
 		}
 
 		public CocoDressupCategoryData GetCategoryData(string pCategoryID){
@@ -146,6 +147,11 @@ namespace Game
 
 		public CocoLockType m_LockType = CocoLockType.Non;
 
+	}
+
+	public class DetailItemData {
+		public string CategoryID;
+		public int Index;
 	}
 
 }

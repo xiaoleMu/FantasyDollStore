@@ -15,6 +15,8 @@ namespace Game
     {
 		public string appVersion = "0.3.0";
 
+		public int m_DetailIndex = 0;
+
         private GameRoleStateModel m_RoleStateModel;
 
 	

@@ -6,10 +6,10 @@
 				<key>CFBundleTypeRole</key>
 				<string>None</string>
 				<key>CFBundleURLName</key>
-				<string>com.tabtaleint.publishingsdkcore</string>
+				<string>com.cocoplay.fantasydollstore</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
-					<string>com.tabtaleint.publishingsdkcore</string>
+					<string>com.cocoplay.fantasydollstore</string>
 				</array>
 			</dict>
 		</array>

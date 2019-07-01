@@ -153,7 +153,7 @@ namespace Game
 
 		#region Doll
 
-		public List<List<string>> recordDolls = new List<List<string>> ();
+		public List<DollRecordData> recordDolls = new List<DollRecordData> ();
 
 		#endregion
 	}
