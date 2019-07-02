@@ -103,7 +103,7 @@ public class GameLoadingAnim : CocoSceneTransitionBase
 
 		m_Loading.gameObject.SetActive (true);
 		yield return new CCWait (0.3f);
-		CocoAudio.PlaySound (Game.CocoAudioID.Contest_Cards_In);
+//		CocoAudio.PlaySound (Game.CocoAudioID.Contest_Cards_In);
 		LeanTween.moveLocalY (m_Logo.gameObject, m_LogoTargetY, 0.8f).setEase (LeanTweenType.easeOutBack).setIgnoreTimeScale (true);
 		yield return new CCWait (0.8f);
 	}

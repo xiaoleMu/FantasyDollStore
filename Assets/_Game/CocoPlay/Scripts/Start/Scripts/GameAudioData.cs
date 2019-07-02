@@ -18,33 +18,6 @@ namespace Game
 		Button_Click_06 = 1006,
 		Button_Click_07 = 1007,
 
-		//Box_Click = 1008,
-		Box_Open = 1009,
-		Coins_Drop = 1010,
-		//Contest_Applause = 1011,
-		Contest_Cards_In = 1012,
-		Contest_Cheering = 1013,
-		Contest_Counting_Down = 1014,
-		Contest_Lighting_Up_Stars = 1015,
-		Contest_Miss = 1016,
-		Contest_Not_Winning = 1017,
-		//Contest_Picturing = 1018,
-		Contest_Plosive = 1019,
-		Contest_Score_Raising = 1020,
-		Contest_VS_In = 1021,
-		Fireworks = 1022,
-
-		Hair_Salon_Blower = 1023,
-		Hair_Salon_Shampoo = 1024,
-		Hair_Salon_Shower_Head = 1025,
-
-		Open_Coins = 1026,
-		//Open_Fans = 1027,
-		Open_Items = 1028,
-		//Rank_Up = 1029,
-		//Skill_Bar = 1030,
-		//Casher = 1031,
-
 		#endregion
 
 
@@ -59,12 +32,9 @@ namespace Game
 		#region scene bg
 
 		Bgm_Common = 3001,
-		Bgm_DIY = 3002,
+		Bgm_Cover = 3002,
 		Bgm_Map = 3003,
-		Bgm_Contest = 3004,
-		Bgm_Clip_01 = 3021,
-		Bgm_Clip_02 = 3022,
-		Bgm_Clip_03 = 3023,
+		Bgm_Doll = 3004,
 
 		#endregion
 
@@ -143,51 +113,14 @@ namespace Game
 
 		public override void InitAudioDatas ()
 		{
-			AddAudioData (CocoAudioID.Button_Click_01, "sound_effect/button_click_01");
-			AddAudioData (CocoAudioID.Button_Click_02, "sound_effect/button_click_02");
-			AddAudioData (CocoAudioID.Button_Click_03, "sound_effect/button_click_03");
-			AddAudioData (CocoAudioID.Button_Click_04, "sound_effect/button_click_04");
-			AddAudioData (CocoAudioID.Button_Click_05, "sound_effect/button_click_05");
-			AddAudioData (CocoAudioID.Button_Click_06, "sound_effect/button_click_06");
-			AddAudioData (CocoAudioID.Button_Click_07, "sound_effect/button_click_07");
-			//AddAudioData (CocoAudioID.Box_Click, "sound_effect/box_click");
-			AddAudioData (CocoAudioID.Box_Open, "sound_effect/box_open");
-			AddAudioData (CocoAudioID.Coins_Drop, "sound_effect/coin_drop");
-			//AddAudioData (CocoAudioID.Contest_Applause, "sound_effect/contest_applause");
-			AddAudioData (CocoAudioID.Contest_Cards_In, "sound_effect/contest_cards_in");
-			AddAudioData (CocoAudioID.Contest_Cheering, "sound_effect/contest_cheering");
-			AddAudioData (CocoAudioID.Contest_Counting_Down, "sound_effect/contest_counting_down");
-			AddAudioData (CocoAudioID.Fireworks, "sound_effect/contest_fireworks");
-			AddAudioData (CocoAudioID.Contest_Lighting_Up_Stars, "sound_effect/contest_lighting_up_stars");
-			AddAudioData (CocoAudioID.Contest_Miss, "sound_effect/contest_miss");
-			AddAudioData (CocoAudioID.Contest_Not_Winning, "sound_effect/contest_not_winning");
-			//AddAudioData (CocoAudioID.Contest_Picturing, "sound_effect/contest_picturing");
-			AddAudioData (CocoAudioID.Contest_Plosive, "sound_effect/contest_plosive");
-			AddAudioData (CocoAudioID.Contest_Score_Raising, "sound_effect/contest_score_raising");
-			AddAudioData (CocoAudioID.Contest_VS_In, "sound_effect/contest_vs_in");
-			AddAudioData (CocoAudioID.Hair_Salon_Blower, "sound_effect/hair_salon_blower");
-			AddAudioData (CocoAudioID.Hair_Salon_Shampoo, "sound_effect/hair_salon_shampoo");
-			AddAudioData (CocoAudioID.Hair_Salon_Shower_Head, "sound_effect/hair_salon_shower_head");
-			AddAudioData (CocoAudioID.Open_Coins, "sound_effect/open_coins");
-			//AddAudioData (CocoAudioID.Open_Fans, "sound_effect/open_fans");
-			AddAudioData (CocoAudioID.Open_Items, "sound_effect/open_items");
-			//AddAudioData (CocoAudioID.Rank_Up, "sound_effect/rank_up");
-			//AddAudioData (CocoAudioID.Skill_Bar, "sound_effect/skill_bar");
-			//AddAudioData (CocoAudioID.Casher, "sound_effect/casher");
-			AddAudioData (CocoAudioID.Contest_Negative_Sound, "sound_effect/negative_sound");
+			AddAudioData (CocoAudioID.Button_Click_01, "sound/1.2");
+			AddAudioData (CocoAudioID.Button_Click_02, "sound/1.3");
 
-			//AddAudioData (CocoAudioID.Stylist_Lever, "sound_effect/stylist_lever");
-			//AddAudioData (CocoAudioID.Photobooth_Photo, "sound_effect/photobooth_photo");
+			AddAudioData (CocoAudioID.Bgm_Common, "bgm/bg_01");
+			AddAudioData (CocoAudioID.Bgm_Cover, "bgm/bg_02");
+			AddAudioData (CocoAudioID.Bgm_Map, "bgm/bg_03");
+			AddAudioData (CocoAudioID.Bgm_Doll, "bgm/bg_04");
 
-			AddAudioData (CocoAudioID.Bgm_Common, "bgm/coco_diy_activities_music");
-			AddAudioData (CocoAudioID.Bgm_DIY, "bgm/coco_diy_diy_music");
-			AddAudioData (CocoAudioID.Bgm_Map, "bgm/coco_diy_map_music");
-			AddAudioData (CocoAudioID.Bgm_Contest, "bgm/coco_diy_selfie_music");
-			AddAudioData (CocoAudioID.Bgm_Clip_01, "bgm/coco_diy_youtube_clip_music_1");
-			AddAudioData (CocoAudioID.Bgm_Clip_02, "bgm/coco_diy_youtube_clip_music_2");
-			AddAudioData (CocoAudioID.Bgm_Clip_03, "bgm/coco_diy_youtube_clip_music_3");
-
-			AddAudioData (CocoAudioID.agegate_scroll, "sound_effect/machinery");
 
 			InitSceneBgMusics ();
 		}
@@ -198,7 +131,9 @@ namespace Game
 		{
 			m_SceneBgMusics = new Dictionary<CocoSceneID, CocoAudioID[]> {
 				{ CocoSceneID.None, new[] { CocoAudioID.Bgm_Common } },
-				{ CocoSceneID.Map, new[] { CocoAudioID.Bgm_Map } }
+				{ CocoSceneID.CoverPage, new[] { CocoAudioID.Bgm_Cover } },
+				{ CocoSceneID.Map, new[] { CocoAudioID.Bgm_Map } },
+				{ CocoSceneID.Doll, new[] { CocoAudioID.Bgm_Doll } },
 			};
 		}
 

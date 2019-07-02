@@ -92,8 +92,12 @@ namespace Game
         {
             switch (pSceneID)
             {
+				case CocoSceneID.CoverPage:
+					return CocoAudioID.Bgm_Cover;
                 case CocoSceneID.Map:
                     return CocoAudioID.Bgm_Map;
+				case CocoSceneID.Doll:
+					return CocoAudioID.Bgm_Doll;
 
                 default:
                     return CocoAudioID.None;

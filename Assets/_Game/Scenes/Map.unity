@@ -411,7 +411,7 @@ MonoBehaviour:
   handleClick: 1
   clickAudio:
     m_FirstUsed: 1
-    m_First: 2
+    m_First: 1001
     m_Second: 
   audioPlayType: 0
 --- !u!114 &153945916
