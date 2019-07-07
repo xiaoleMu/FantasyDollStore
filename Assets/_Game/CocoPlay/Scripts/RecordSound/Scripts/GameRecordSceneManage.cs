@@ -92,7 +92,7 @@ namespace Game
 		[SerializeField]
 		Slider m_ToneSlider;
 		public void OnToneChange (float value){
-			_speechRepeater.audioConfig.pitch = m_ToneSlider.value * 2f + 1f;
+			_speechRepeater.audioConfig.pitch = m_ToneSlider.value * 2.8f + 0.2f;
 			Debug.LogError ("aaaaaaa is : " + _speechRepeater.audioConfig.pitch);
 		}
 

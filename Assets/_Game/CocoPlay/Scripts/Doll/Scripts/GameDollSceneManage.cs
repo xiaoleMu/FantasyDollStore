@@ -65,6 +65,9 @@ namespace Game
 			if (GlobalData.curSelectRole != -1){
 				dressupData.m_DetailIndex = recordStateModel.RecordDolls[dressupData.m_DetailIndex].detailIndex;
 			}
+			else {
+				m_CurRole.Dress.AddDressItem (new List<string> (){"eye_001","body_001","ear_001","tail_001","eye_001"});
+			}
 //			dressupData.m_DetailIndex = GlobalData.m_DetailIndex;
 		}
 
