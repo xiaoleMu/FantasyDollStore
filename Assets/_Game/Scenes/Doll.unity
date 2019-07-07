@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.67058825, g: 0.67058825, b: 0.67058825, a: 1}
+  m_AmbientSkyColor: {r: 0.35, g: 0.35, b: 0.35, a: 1}
   m_AmbientEquatorColor: {r: 0.4705882, g: 0.4221453, b: 0.4657439, a: 1}
   m_AmbientGroundColor: {r: 0.4705882, g: 0.4221453, b: 0.4657439, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: d705f86fe3fd8404babede0b0969031b, type: 2}
   m_HaloStrength: 0.5
@@ -2154,6 +2154,68 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1351630217
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20dee7d9332a9b04a9b6b6ede538e23e, type: 2}
+    - target: {fileID: 100050, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 23e53cf4908c451449cc9bb6efaf5faf, type: 3}
+  m_IsPrefabAsset: 0
 --- !u!1 &1399163558
 GameObject:
   m_ObjectHideFlags: 0
