@@ -35,6 +35,7 @@ namespace Game
 		Bgm_Cover = 3002,
 		Bgm_Map = 3003,
 		Bgm_Doll = 3004,
+		Bgm_Record = 3005,
 
 		#endregion
 
@@ -120,6 +121,7 @@ namespace Game
 			AddAudioData (CocoAudioID.Bgm_Cover, "bgm/bg_02");
 			AddAudioData (CocoAudioID.Bgm_Map, "bgm/bg_03");
 			AddAudioData (CocoAudioID.Bgm_Doll, "bgm/bg_04");
+//			AddAudioData (CocoAudioID.Bgm_Record, "bgm/bg_05");
 
 
 			InitSceneBgMusics ();

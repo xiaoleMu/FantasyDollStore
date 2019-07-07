@@ -98,6 +98,8 @@ namespace Game
                     return CocoAudioID.Bgm_Map;
 				case CocoSceneID.Doll:
 					return CocoAudioID.Bgm_Doll;
+				case CocoSceneID.RecordVolue:
+					return CocoAudioID.Bgm_Record;
 
                 default:
                     return CocoAudioID.None;

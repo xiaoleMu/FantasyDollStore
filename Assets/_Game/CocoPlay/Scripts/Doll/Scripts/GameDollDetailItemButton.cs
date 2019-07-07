@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using CocoPlay;
+using System.Linq;
 
 namespace Game
 {
@@ -98,10 +99,14 @@ namespace Game
 //				});
 //			}
 
-			List<string> ids = roleControl.CurRole.Dress.GetDressIdsByCategory ("body");
+			List<string> body = roleControl.CurRole.Dress.GetDressIdsByCategory ("body");
+			List<string> ear = roleControl.CurRole.Dress.GetDressIdsByCategory ("ear");
+			List<string> nose = roleControl.CurRole.Dress.GetDressIdsByCategory ("nose");
+			List<string> tail = roleControl.CurRole.Dress.GetDressIdsByCategory ("tail");
+			List<string> ids = body.Union(ear).Union(nose).Union(tail).ToList<string>(); 
 			foreach (string id in ids){
-				var body = roleControl.CurRole.Dress.GetDressItem (id);
-				SkinnedMeshRenderer render = body.ItemRenderers[0];
+				var dress = roleControl.CurRole.Dress.GetDressItem (id);
+				SkinnedMeshRenderer render = dress.ItemRenderers[0];
 				for(int i=0; i<render.materials.Length; i++){
 					Texture2D normal = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_nomal", m_Index+1));
 					Texture2D rgb = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_rgb", m_Index+1));

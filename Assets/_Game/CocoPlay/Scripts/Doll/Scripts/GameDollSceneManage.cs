@@ -421,7 +421,7 @@ namespace Game
 			yield return StartCoroutine (m_CurRole.Animation.StartPlay (dressupData.CA_Dressup_win01));
 			yield return StartCoroutine (m_CurRole.Animation.StartPlay (dressupData.CA_Dressup_win02));
 
-			CocoMainController.EnterScene (CocoSceneID.Map);
+			CocoMainController.EnterScene (CocoSceneID.RecordVolue);
 		}
 
 		#endregion

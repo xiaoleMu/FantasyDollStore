@@ -279,6 +279,34 @@ namespace CocoPlay
 			}
 		}
 
+		public static void PlayOnTarget (GameObject targetGo, AudioClip clip, bool loop = false)
+		{
+			if (Instance.Manager.IsLayerMuted (SoundLayer.Main)) {
+				return;
+			}
+			if (targetGo == null || clip == null) {
+				return;
+			}
+
+			AudioSource audio = CocoLoad.GetOrAddComponent<AudioSource> (targetGo);
+			audio.playOnAwake = false;
+			AudioClip oldClip = audio.clip;
+
+			if (oldClip != clip) {
+				if (oldClip != null) {
+					audio.clip = null;
+					Resources.UnloadAsset (oldClip);
+				}
+				audio.clip = clip;
+			}
+			audio.loop = loop;
+			audio.Play ();
+
+			if (!Instance.m_TargetSet.Contains (targetGo)) {
+				Instance.m_TargetSet.Add (targetGo);
+			}
+		}
+
 		public static void StopOnTarget (GameObject targetGo)
 		{
 			if (Instance.Manager.IsLayerMuted (SoundLayer.Main)) {

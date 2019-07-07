@@ -11,6 +11,7 @@ namespace Game
 		CoverPage = 1,
 		Map = 2,
 		Doll = 3,
+		RecordVolue = 4,
 	}
 
 

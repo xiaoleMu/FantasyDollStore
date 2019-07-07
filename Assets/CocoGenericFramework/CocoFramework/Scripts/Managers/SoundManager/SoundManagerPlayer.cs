@@ -99,6 +99,17 @@ namespace TabTale
 			return smc;
 		}
 
+//		public SoundManagerClip PlaySound(AudioClip clip, SoundLayer layer, bool isLooping = false)
+//		{
+//			SoundManagerClip smc = FindFreeAudioSource(layer, clipName);
+//			smc._audioClipPath = clipName;
+//			smc.LoadSoundClip();
+//			smc._audiSource.clip = clip；
+//			smc._audiSource.loop = isLooping;
+//			smc._audiSource.Play();
+//			return smc;
+//		}
+
 		public bool IsPlaying(string clipName, SoundLayer layer)
 		{
 			bool isPlaying = false;

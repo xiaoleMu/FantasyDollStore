@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TabTale;
 using UnityEngine.UI;
 using CocoPlay.Native;
+using System.Linq;
 
 namespace Game
 {
@@ -54,15 +55,19 @@ namespace Game
 				if (GlobalData.curSelectRole != -1){
 					roleControl.CurRole.Dress.AddDressItem (recordStateModel.RecordDolls[GlobalData.curSelectRole].dress);
 
-					List<string> ids = roleControl.CurRole.Dress.GetDressIdsByCategory ("body");
+					List<string> body = roleControl.CurRole.Dress.GetDressIdsByCategory ("body");
+					List<string> ear = roleControl.CurRole.Dress.GetDressIdsByCategory ("ear");
+					List<string> nose = roleControl.CurRole.Dress.GetDressIdsByCategory ("nose");
+					List<string> tail = roleControl.CurRole.Dress.GetDressIdsByCategory ("tail");
+					List<string> ids = body.Union(ear).Union(nose).Union(tail).ToList<string>(); 
 					foreach (string id in ids){
-						var body = roleControl.CurRole.Dress.GetDressItem (id);
-						SkinnedMeshRenderer render = body.ItemRenderers[0];
-						for(int j=0; j<render.materials.Length; j++){
+						var dress = roleControl.CurRole.Dress.GetDressItem (id);
+						SkinnedMeshRenderer render = dress.ItemRenderers[0];
+						for(int i=0; i<render.materials.Length; i++){
 							Texture2D normal = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_nomal", recordStateModel.RecordDolls[GlobalData.curSelectRole].detailIndex));
 							Texture2D rgb = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_rgb", recordStateModel.RecordDolls[GlobalData.curSelectRole].detailIndex));
-							render.materials[j].SetTexture ("_BumpMap", normal);
-							render.materials[j].SetTexture ("_metallicRsmoothGdiffuseB", rgb);
+							render.materials[i].SetTexture ("_BumpMap", normal);
+							render.materials[i].SetTexture ("_metallicRsmoothGdiffuseB", rgb);
 						}
 					}
 				}
@@ -90,10 +95,14 @@ namespace Game
 				CocoRoleEntity tempDoll = roleControl.CreateTempRole(roleName, roleName, m_DollTransParent);
 				tempDoll.Dress.AddDressItem (recordStateModel.RecordDolls[i].dress);
 
-				List<string> ids = tempDoll.Dress.GetDressIdsByCategory ("body");
+				List<string> body = roleControl.CurRole.Dress.GetDressIdsByCategory ("body");
+				List<string> ear = roleControl.CurRole.Dress.GetDressIdsByCategory ("ear");
+				List<string> nose = roleControl.CurRole.Dress.GetDressIdsByCategory ("nose");
+				List<string> tail = roleControl.CurRole.Dress.GetDressIdsByCategory ("tail");
+				List<string> ids = body.Union(ear).Union(nose).Union(tail).ToList<string>(); 
 				foreach (string id in ids){
-					var body = tempDoll.Dress.GetDressItem (id);
-					SkinnedMeshRenderer render = body.ItemRenderers[0];
+					var dress = roleControl.CurRole.Dress.GetDressItem (id);
+					SkinnedMeshRenderer render = dress.ItemRenderers[0];
 					for(int j=0; j<render.materials.Length; j++){
 						Texture2D normal = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_nomal", recordStateModel.RecordDolls[i].detailIndex));
 						Texture2D rgb = Resources.Load <Texture2D> (string.Format("role/basic/basic/textures/common/material_{0:D3}_rgb", recordStateModel.RecordDolls[i].detailIndex));

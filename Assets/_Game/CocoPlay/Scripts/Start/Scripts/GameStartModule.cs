@@ -48,6 +48,7 @@ namespace Game
 			AddSceneModuleData (new CocoSceneModuleData (CocoSceneID.CoverPage, "CoverPage"));
 			AddSceneModuleData (new CocoSceneModuleData (CocoSceneID.Map, "Map", typeof(GameDollSceneModule)));
 			AddSceneModuleData (new CocoSceneModuleData (CocoSceneID.Doll, "Doll", typeof(GameDollSceneModule)));
+			AddSceneModuleData (new CocoSceneModuleData (CocoSceneID.RecordVolue, "RecordVolue", typeof(GameRecordSceneModule)));
 		}
 
 		protected override void InitSubModules ()

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Map.unity
     guid: 4d5e353935ee54d4c8d2f09090204f17
+  - enabled: 1
+    path: Assets/_Game/Scenes/RecordVolue.unity
+    guid: 54b1166effb37440fb304073dfb2b34c
   m_configObjects: {}
